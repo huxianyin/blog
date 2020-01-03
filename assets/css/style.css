@@ -50,7 +50,7 @@
     display: inline-block;
     width: 100px;
     height: 100px;
-    font-size: 35px;
+    font-size: 55px;
     color: #fff;
     border-radius: 50%;
     background: black;
@@ -101,9 +101,15 @@
     border-bottom: 1px solid rgba(127, 122, 122, 0.81);
     color: rgba(98, 89, 89, 0.92);
 }
+
+.work_info h2{
+    font-size: 30px;
+}
+
 .work_info{
     padding-left: 20px;
-    color:  rgba(118, 106, 106, 0.81);
+    color:rgba(118, 106, 106, 0.81);
+    padding-top: 20px;
 }
 .wrapper{
     padding-left: 30px;
@@ -138,10 +144,19 @@
     top:170px;
     left: -7px;
 }
+.forth{
+    top:254px;
+    left: -7px;
+}
+
+.skill h2{
+  font-size:30px
+}
 .skill{
     float: right;
-    margin-top: 33px;
+    padding-top: 20px;
 }
+
 .box{
     width: 300px;
     display: flex;
@@ -150,12 +165,16 @@
 }
 .wrap{
     width: 150px;
-    margin-bottom:40px ;
+    margin-bottom:55px ;
+}
+
+.activities h2{
+  font-size:30px
 }
 .activities{
-    width: 800px;
+    width: 500px;
     padding-left: 20px;
-    margin-top: 40px;
+    padding-top: 20px;
     color: rgba(118, 106, 106, 0.81);
 }
 .activities >h2{
