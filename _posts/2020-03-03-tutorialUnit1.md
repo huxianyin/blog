@@ -141,7 +141,7 @@ ___
   - 1.9 Building a model following the tutorial code
     - 2-digit addition
 
-___
+
 #### ACT-R プログラムと普通のプログラムの違い
 ------
  - The model is not being written as commands for a computer to execute, but as commands for a cognitive processor ( a simulated human mind)
