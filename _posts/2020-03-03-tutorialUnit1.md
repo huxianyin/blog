@@ -15,19 +15,20 @@ tags: ACTーR
   - 1.2 The ACT-R Architecture
   - 1.3 ACT-R software and Models
     - Programming Language : Common Lisp
-  - **1.4 Creating an ACT-R Model**
+  - 1.4 Creating an ACT-R Model
     - control commands
       - clear-all
       - define-model
     - Chunk-type
       - (chunck-type chunck-name slot1 slot2 slot3)
     - Creating chuncks <span style="color:red">add-dm</span>.
-      ```lisp
+      - Example:
+        ```lisp
         (add-dm
             (b ISA counter-order first 1 second 2)
             (first-goal ISA count-from start 2 end 4)
         )
-		```
+        ```
     - Creating productions  <span style="color:red">p</span>.
       - Example 1 :   test condtions and set states of buffers or make retrieval request
       ```lisp
@@ -129,7 +130,7 @@ tags: ACTーR
     - until "count" == 2
     - output up-to-date "sum"
 
-  - **1.8 The Semantic Model **
+  - **1.8 The Semantic Model**
     - searching the following network to make decisions about whether one category is a member of another category.
   <img src="{{site.baseurl}}/assets/figs/post-20-03-03/eg.png" width="500px">
 
@@ -137,7 +138,7 @@ tags: ACTーR
     - 2-digit addition
 
 
- #### ACT-R プログラムと普通のプログラムの違い
+#### ACT-R プログラムと普通のプログラムの違い
  - The model is not being written as commands for a computer to execute, but as commands for a cognitive processor ( a simulated human mind)
 
 - ACT-R is a very low-level language written to run on a “processor” with many high-level capabilities built into it whereas most languages are a high-level set of operators targeting a very general low-level processor for execution.
