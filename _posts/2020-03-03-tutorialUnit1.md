@@ -13,12 +13,12 @@ ___
   - 1.1 Knowledge Representations
     - chuncks
     - productions
-  ------
+------
   - 1.2 The ACT-R Architecture
-  ------
+------
   - 1.3 ACT-R software and Models
     - Programming Language : Common Lisp
-  ------
+------
   - **1.4 Creating an ACT-R Model**
     - control commands
       - clear-all
