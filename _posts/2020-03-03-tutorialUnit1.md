@@ -3,7 +3,7 @@ layout: post
 title:  "ACT-R Tutorial Unit1"
 date:   2020-03-03 18:53:13 +0800
 categories: 認知科学
-tags: ACTーR
+tags: ACTR_Tutorial,ACT-R
 ---
 <img src="{{site.baseurl}}/assets/figs/post-20-03-03/eg.png" width="500px">
 ## Introduction to ACT-R
