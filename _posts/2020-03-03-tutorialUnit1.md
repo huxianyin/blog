@@ -13,12 +13,12 @@ ___
   - 1.1 Knowledge Representations
     - chuncks
     - productions
-------
+
   - 1.2 The ACT-R Architecture
-------
+
   - 1.3 ACT-R software and Models
     - Programming Language : Common Lisp
-------
+
   - **1.4 Creating an ACT-R Model**
     - control commands
       - clear-all
@@ -116,28 +116,28 @@ ___
 			      state       error
 				  recently-retrieved t
 		```
-------
+
   - 1.5  The count mode
     - setting initial goal :  <span style="color:red">goal-focus</span>.
     - (goal-focus first-goal)
-------
+
   - 1.6 Pattern Matching Exercise
     - "Procedual"
 		- Click "Why not" to debug  (or use as a command)
     - "Stepper"
 		- Button in the control panel to debug
-------
+
   - 1.7 The addition Model
     - add by count
     - 5 + 2 = 7   -->   5+1 = 6 ,  5+1 = 7
     - update "sum" and "count"
     - until "count" == 2
     - output up-to-date "sum"
-------
+
   - 1.8 The Semantic Model
     - searching the following network to make decisions about whether one category is a member of another category.
   <img src="{{site.baseurl}}/assets/figs/post-20-03-03/eg.png" width="500px">
-------
+
   - 1.9 Building a model following the tutorial code
     - 2-digit addition
 
