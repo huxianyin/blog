@@ -143,6 +143,7 @@ ___
 
 ___
 #### ACT-R プログラムと普通のプログラムの違い
+------
  - The model is not being written as commands for a computer to execute, but as commands for a cognitive processor ( a simulated human mind)
 
 - ACT-R is a very low-level language written to run on a “processor” with many high-level capabilities built into it whereas most languages are a high-level set of operators targeting a very general low-level processor for execution.
