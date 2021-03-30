@@ -5,8 +5,8 @@ date:   2020-03-03 18:53:13 +0800
 categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
+#### Introduction to ACT-R
 <img src="{{site.baseurl}}/assets/figs/post-20-03-03/eg.png" width="500px">
-## Introduction to ACT-R
 ___
 #### Contents
 ------

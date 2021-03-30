@@ -3,7 +3,7 @@ layout: post
 title:  "ACT-R各章現れたモデルのまとめ"
 date:   2020-02-03 18:53:13 +0800
 categories: 認知科学
-tags: ACTーR
+tags: ACT-R
 ---
 - #### Unit1
   - The Semantic Model
