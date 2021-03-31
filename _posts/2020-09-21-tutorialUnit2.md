@@ -27,36 +27,35 @@ ___
 ---
 - can parse text, lines, button features from the displays created.
 - tow buffer :
-   - **visual-location**
-   ```lisp
-       (p find-location
+ - **visual-location**
+ ```lisp
+     (p find-location
+       ...
+     ==>
+       +visual-location>  
+         :attended nil  ;// request for a location which the model has not attended
+	   :attended t    ;// request for a location which has been attended previously
+         :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
+       ...
+     )
+  ```
+ - **visual**
+  ```lisp
+     (p attend-letter
+       =goal>
          ...
-       ==>
-         +visual-location>  
-           :attended nil  ;// request for a location which the model has not attended
-		   :attended t    ;// request for a location which has been attended previously
-           :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
+       =visual-location>   ;// if there is a chunk in the visual-location buffer
+       ?visual>            ;// query visual buffer if it is available for a new request
+         state free
+     ==>
+      +visual>     ;// move attention to the location specified in visual-location
+         cmd         move-attention
+         screen-pos  =visual-location
+       =goal>
          ...
-       )
-	  ```
-   - **visual**
-
-    ```lisp
-       (p attend-letter
-         =goal>
-           ...
-         =visual-location>   ;// if there is a chunk in the visual-location buffer
-         ?visual>            ;// query visual buffer if it is available for a new request
-           state free
-       ==>
-        +visual>     ;// move attention to the location specified in visual-location
-           cmd         move-attention
-           screen-pos  =visual-location
-         =goal>
-           ...
-		```
- - for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.
- - the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.
+  ```
+- for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.
+- the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.
 
 ####  Motor Module
 ---

@@ -49,37 +49,36 @@ ___
 ---
 - can parse text, lines, button features from the displays created.
 - tow buffer :
-   - **visual-location**
-   ```lisp
-       (p find-location
+ - **visual-location**
+ ```lisp
+     (p find-location
+       ...
+     ==&gt;
+       +visual-location&gt;  
+         :attended nil  ;// request for a location which the model has not attended
+       :attended t    ;// request for a location which has been attended previously
+         :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
+       ...
+     )
+  ```
+ - **visual**
+  ```lisp
+     (p attend-letter
+       =goal&gt;
          ...
-       ==&gt;
-         +visual-location&gt;  
-           :attended nil  ;// request for a location which the model has not attended
-           :attended t    ;// request for a location which has been attended previously
-           :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
+       =visual-location&gt;   ;// if there is a chunk in the visual-location buffer
+       ?visual&gt;            ;// query visual buffer if it is available for a new request
+         state free
+     ==&gt;
+      +visual&gt;     ;// move attention to the location specified in visual-location
+         cmd         move-attention
+         screen-pos  =visual-location
+       =goal&gt;
          ...
-       )
-      ```
-   - **visual**
+  ```
+- for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.
+- the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.
 
-<pre><code>```lisp
-   (p attend-letter
-     =goal&gt;
-       ...
-     =visual-location&gt;   ;// if there is a chunk in the visual-location buffer
-     ?visual&gt;            ;// query visual buffer if it is available for a new request
-       state free
-   ==&gt;
-    +visual&gt;     ;// move attention to the location specified in visual-location
-       cmd         move-attention
-       screen-pos  =visual-location
-     =goal&gt;
-       ...
-    ```</code></pre><ul>
-<li>for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.</li>
-<li>the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.</li>
-</ul>
 <h4 id="motor-module">Motor Module</h4>
 <hr>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
