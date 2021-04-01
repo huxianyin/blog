@@ -28,232 +28,231 @@ date:   2020-09-22 16:37:13 +0800
 categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <h2 id="tags-actr_assignment-act-r">tags: ACTR_Assignment ACT-R</h2>
 <h4 id="-">&#x9055;&#x3044;&#x63A2;&#x3057;&#x30BF;&#x30B9;&#x30AF;</h4>
-<img src="{{site.baseurl}}/assets/figs/post-20-09-22/screenshot.png" width="100px">
+<img src="{{site.baseurl}}/assets/figs/post-20-09-22/screenshot.png" width="200px">
 
 <h4 id="task">Task</h4>
 <ul>
 <li>The task code: tutorial/lisp/unit2.lisp</li>
 <li>After 3 letters presented, report the differerent one</li>
 </ul>
-<hr>
 <h4 id="run">Run</h4>
 <p><img src="https://img.shields.io/badge/buidling-ACT_R7.0-green.svg" alt="tag"></p>
 <pre><code class="language-console">   ? (unit2-experiment)</code></pre>
 <h4 id="model-my-answer-">Model (My Answer)</h4>
-<pre><code class="language-lisp">(clear-all)
+<pre><code class="language-lisp">  (clear-all)
 
-(define-model unit2
+  (define-model unit2
 
-(sgp :v nil :show-focus nil)
-
-
-(chunk-type read-letters state)
-(chunk-type array letter1 letter2 letter3 decision)
-
-(add-dm
- (start isa chunk)
- (attend isa chunk)
- (respond isa chunk)
- (find-next isa chunk)
- (judge isa chunk)
- (done isa chunk)
- (goal isa read-letters state start))
+  (sgp :v nil :show-focus nil)
 
 
-(P find-unattended-letter
-   =goal&gt;
-      ISA         read-letters
-      state       start
-   ?imaginal&gt;
-         state       free
- ==&gt;
-   +visual-location&gt;
-      :attended    nil
-   =goal&gt;
-      state       find-location
-   +imaginal&gt;
-         isa         array
-         letter1     nil
-         letter2     nil
-         letter3     nil
-)
+  (chunk-type read-letters state)
+  (chunk-type array letter1 letter2 letter3 decision)
+
+  (add-dm
+   (start isa chunk)
+   (attend isa chunk)
+   (respond isa chunk)
+   (find-next isa chunk)
+   (judge isa chunk)
+   (done isa chunk)
+   (goal isa read-letters state start))
 
 
-(P find-next-letter
-   =goal&gt;
-      ISA         read-letters
-      state       find-next
- ==&gt;
-   +visual-location&gt;
-      :attended    nil
-   =goal&gt;
-      state       find-location
-)
+  (P find-unattended-letter
+     =goal&gt;
+        ISA         read-letters
+        state       start
+     ?imaginal&gt;
+           state       free
+   ==&gt;
+     +visual-location&gt;
+        :attended    nil
+     =goal&gt;
+        state       find-location
+     +imaginal&gt;
+           isa         array
+           letter1     nil
+           letter2     nil
+           letter3     nil
+  )
 
 
-(P attend-letter
-   =goal&gt;
-      ISA         read-letters
-      state       find-location
-   =visual-location&gt;
-   ?visual&gt;
-      state       free
-==&gt;
-   +visual&gt;
-      cmd         move-attention
-      screen-pos  =visual-location
-   =goal&gt;
-      state       attend
-)
-
-(P encode-letter-first
-   =goal&gt;
-      ISA         read-letters
-      state       attend
-   =visual&gt;
-      value       =letter
-   ?imaginal&gt;
-      state       free
-   =imaginal&gt;
-      isa         array
-      letter1     nil
-      letter2     nil
-      letter3     nil
-==&gt;
-   =goal&gt;
-      state       find-next
-   +imaginal&gt;
-      isa         array
-      letter1      =letter
-      letter2     nil
-      letter3     nil
-)
+  (P find-next-letter
+     =goal&gt;
+        ISA         read-letters
+        state       find-next
+   ==&gt;
+     +visual-location&gt;
+        :attended    nil
+     =goal&gt;
+        state       find-location
+  )
 
 
-(P encode-letter-second
-   =goal&gt;
-      ISA         read-letters
-      state       attend
-   =visual&gt;
-      value       =letter
-   ?imaginal&gt;
-      state       free
-   =imaginal&gt;
-      isa         array
-         letter1     =letter1
-         letter2     nil
-         letter3     nil
-==&gt;
-   =goal&gt;
-      state       find-next
-   +imaginal&gt;
-      isa         array
-      letter1      =letter1
-      letter2      =letter
-      letter3      nil
-)
+  (P attend-letter
+     =goal&gt;
+        ISA         read-letters
+        state       find-location
+     =visual-location&gt;
+     ?visual&gt;
+        state       free
+  ==&gt;
+     +visual&gt;
+        cmd         move-attention
+        screen-pos  =visual-location
+     =goal&gt;
+        state       attend
+  )
 
-(P encode-letter-final
-   =goal&gt;
-      ISA         read-letters
-      state       attend
-   =visual&gt;
-      value       =letter
-   ?imaginal&gt;
-      state       free
-   =imaginal&gt;
-         isa         array
-         letter1     =letter1
-         letter2     =letter2
-         letter3     nil
-==&gt;
-    =goal&gt;
-        state     judge
-    +imaginal&gt;
-        isa       array
-        letter1   =letter1
-        letter2   =letter2
-        letter3   =letter
-)
-
-(P judge-diff-letter-3
-    =goal&gt;
-        isa       read-letters
-        state     judge
-    ?imaginal&gt;
-        state     free
-    =imaginal&gt;
-        isa       array
-        letter1   =letter1
-        letter2   =letter1
-        letter3   =letter
-==&gt;
-    =goal&gt;
-        state     respond
-    +imaginal&gt;
-        isa       array
-        decision  =letter
-)
-
-(P judge-diff-letter-2
-    =goal&gt;
-        isa       read-letters
-        state     judge
-    ?imaginal&gt;
-        state     free
-    =imaginal&gt;
-        isa       array
-        letter1   =letter1
-        letter2   =letter
-        letter3   =letter1
-==&gt;
-    =goal&gt;
-        state     respond
-    +imaginal&gt;
-        isa       array
-        decision  =letter
-)
-
-(P judge-diff-letter-1
-    =goal&gt;
-        isa       read-letters
-        state     judge
-    ?imaginal&gt;
-        state     free
-    =imaginal&gt;
-        isa       array
-        letter1   =letter
-        letter2   =letter1
-        letter3   =letter1
-==&gt;
-    =goal&gt;
-        state     respond
-    +imaginal&gt;
-        isa       array
-        decision  =letter
-)
+  (P encode-letter-first
+     =goal&gt;
+        ISA         read-letters
+        state       attend
+     =visual&gt;
+        value       =letter
+     ?imaginal&gt;
+        state       free
+     =imaginal&gt;
+        isa         array
+        letter1     nil
+        letter2     nil
+        letter3     nil
+  ==&gt;
+     =goal&gt;
+        state       find-next
+     +imaginal&gt;
+        isa         array
+        letter1      =letter
+        letter2     nil
+        letter3     nil
+  )
 
 
+  (P encode-letter-second
+     =goal&gt;
+        ISA         read-letters
+        state       attend
+     =visual&gt;
+        value       =letter
+     ?imaginal&gt;
+        state       free
+     =imaginal&gt;
+        isa         array
+           letter1     =letter1
+           letter2     nil
+           letter3     nil
+  ==&gt;
+     =goal&gt;
+        state       find-next
+     +imaginal&gt;
+        isa         array
+        letter1      =letter1
+        letter2      =letter
+        letter3      nil
+  )
 
-(P respond
-   =goal&gt;
-      ISA         read-letters
-      state       respond
-   =imaginal&gt;
-      isa         array
-      decision    =letter
-   ?manual&gt;   
-      state       free
-==&gt;
-   =goal&gt;
-      state       done
-   +manual&gt;
-      cmd         press-key
-      key         =letter
-)
+  (P encode-letter-final
+     =goal&gt;
+        ISA         read-letters
+        state       attend
+     =visual&gt;
+        value       =letter
+     ?imaginal&gt;
+        state       free
+     =imaginal&gt;
+           isa         array
+           letter1     =letter1
+           letter2     =letter2
+           letter3     nil
+  ==&gt;
+      =goal&gt;
+          state     judge
+      +imaginal&gt;
+          isa       array
+          letter1   =letter1
+          letter2   =letter2
+          letter3   =letter
+  )
 
-(goal-focus goal)
-)</code></pre>
+  (P judge-diff-letter-3
+      =goal&gt;
+          isa       read-letters
+          state     judge
+      ?imaginal&gt;
+          state     free
+      =imaginal&gt;
+          isa       array
+          letter1   =letter1
+          letter2   =letter1
+          letter3   =letter
+  ==&gt;
+      =goal&gt;
+          state     respond
+      +imaginal&gt;
+          isa       array
+          decision  =letter
+  )
+
+  (P judge-diff-letter-2
+      =goal&gt;
+          isa       read-letters
+          state     judge
+      ?imaginal&gt;
+          state     free
+      =imaginal&gt;
+          isa       array
+          letter1   =letter1
+          letter2   =letter
+          letter3   =letter1
+  ==&gt;
+      =goal&gt;
+          state     respond
+      +imaginal&gt;
+          isa       array
+          decision  =letter
+  )
+
+  (P judge-diff-letter-1
+      =goal&gt;
+          isa       read-letters
+          state     judge
+      ?imaginal&gt;
+          state     free
+      =imaginal&gt;
+          isa       array
+          letter1   =letter
+          letter2   =letter1
+          letter3   =letter1
+  ==&gt;
+      =goal&gt;
+          state     respond
+      +imaginal&gt;
+          isa       array
+          decision  =letter
+  )
+
+
+
+  (P respond
+     =goal&gt;
+        ISA         read-letters
+        state       respond
+     =imaginal&gt;
+        isa         array
+        decision    =letter
+     ?manual&gt;   
+        state       free
+  ==&gt;
+     =goal&gt;
+        state       done
+     +manual&gt;
+        cmd         press-key
+        key         =letter
+  )
+
+  (goal-focus goal)
+  )</code></pre>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
