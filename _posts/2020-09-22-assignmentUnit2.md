@@ -6,14 +6,15 @@ categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
 #### The Assignment in the ACT-R Tutorial Unit2
-<img src="{{site.baseurl}}/assets/figs/post-20-09-22/screenshot.png" width="500px">
-![tag](https://img.shields.io/badge/buidling-ACT_R7.0-green.svg)
+<img src="{{site.baseurl}}/assets/figs/post-20-09-22/screenshot.png" width="100px">
+
 
 #### Task
   - The task code: tutorial/lisp/unit2.lisp
   - After 3 letters presented, report the differerent one
 ___
 #### Run
+![tag](https://img.shields.io/badge/buidling-ACT_R7.0-green.svg)
 ```console
    ? (unit2-experiment)
 ```
