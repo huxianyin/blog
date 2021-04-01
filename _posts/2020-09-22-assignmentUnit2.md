@@ -5,9 +5,8 @@ date:   2020-09-22 16:37:13 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-#### The Assignment in the ACT-R Tutorial Unit2
+#### 違い探しタスク
 <img src="{{site.baseurl}}/assets/figs/post-20-09-22/screenshot.png" width="100px">
-
 
 #### Task
   - The task code: tutorial/lisp/unit2.lisp
