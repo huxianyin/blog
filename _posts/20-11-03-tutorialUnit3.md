@@ -6,7 +6,7 @@ categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
 #### Attention
-<img src="{{site.baseurl}}/assets/figs/post-20-13-03/demo.gif" width="500px">
+<img src="{{site.baseurl}}/assets/figs/post-20-11-03/demo.gif" width="500px">
 ___
 
 #### 1. Visual Locations
@@ -117,7 +117,7 @@ ___
   - 闪过一个画面，该画面仅维持50ms，实验者被要求回忆某一行的字母, 在原始的任务中，需要被回忆的那一行被用不同频率的声音读出来)
   - Original one: used a tone with a different frequency for each row and the model will hear simulated tones while it is doing the task.  the display was only presented for 50 ms.
   - ACT-R で実行：
-  	- <img src="{{site.baseurl}}/assets/figs/post-20-11-03/demo.gif" width="500px">
+  - <img src="{{site.baseurl}}/assets/figs/post-20-11-03/demo.gif" width="500px">
 
 
 #### 3. Visual Attention
@@ -129,8 +129,8 @@ ___
     - it occurs for both visual and aural percepts
     - a simple approximation of a bottom-up mechanism of attention.
     - "NIL" :  this setting of the chunk in the buffer was not the result of a production’s request.
-     >0.000 VISION SET-BUFFER-CHUNK VISUAL-LOCATION VISUAL-LOCATION1 NIL
-  - Testing and Requesting Locations with Slot Modifiers
+  >0.000 VISION SET-BUFFER-CHUNK VISUAL-LOCATION VISUAL-LOCATION1 NIL
+    - Testing and Requesting Locations with Slot Modifiers
     - strict harvesting :  automatically clear buffers, otherwise it is modified on RHS
 
 #### 4. Auditory Attention
@@ -163,7 +163,7 @@ ___
       	- for words : strings
       	- for digits : number
   	- event : contains a chunk that relates to the event that was used to attend the sound
- -
+  -
 	```lisp
 		 (p sound-respond-low
 		 	=goal>
@@ -184,7 +184,7 @@ ___
 
 #### 5.  Typing and Control
 - goal module creates a new chunk immediately in response to a request (imaginal module takes time to create new chunk)
-	-
+  -
 ```lisp
 (p start-report
 	 	=goal>
@@ -210,6 +210,7 @@ ___
 	- (spp sound-respond-low :u 10)
 	- (spp sound-respond-high :u 10)
 	- (spp sound-respond-middium :u 10)
+- 
 	```lisp
 	...
 	==>
@@ -242,4 +243,4 @@ ___
 - metric : number of items correctly recalled
 - conditions :  0s,  0.15s,  0.3s , 1.0s  (delay of sound stimuli)
 - result:
-<img src="{{site.baseurl}}/assets/figs/post-20-11-03/result.png" width="500px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-03/result.png" width="500px">
