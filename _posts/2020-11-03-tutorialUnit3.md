@@ -143,7 +143,6 @@ ___
 	- depend on the type of sound : tone, digit, word, ...
 	- tone : 0.5s
 - the following production responds to the appearance of an audio-event in the aural-location buffer:
-	-
 	```lisp
 	 (p detect-sound
 	 	=aural-location>    ;// test if there is a chunck in the aural-location buffer
@@ -208,14 +207,14 @@ ___
 	- (spp sound-respond-low :u 10)
 	- (spp sound-respond-high :u 10)
 	- (spp sound-respond-middium :u 10)
-	```lisp
-	...
-	==>
-	 	+mannual>
-	 		cmd  press-key
-	 		key  =val
-	```
-___
+```lisp
+...
+==>
+ 	+mannual>
+ 		cmd  press-key
+ 		key  =val
+```
+
 #### 6. Declarative Finsts
 ___
   - For a model to exhaustively search DM for items without repeating
