@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ACT-R Tutorial Unit3"
-date:   2020-11-3 01:07:14 +0800
+date:   2020-11-03 01:07:14 +0800
 categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
