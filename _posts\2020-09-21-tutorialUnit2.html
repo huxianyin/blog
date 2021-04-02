@@ -29,56 +29,55 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <h2 id="tags-actr_tutorial-act-r">tags: ACTR_Tutorial ACT-R</h2>
 <h4 id="perception-and-motor-actions">Perception and Motor Actions</h4>
 <img src="{{site.baseurl}}/assets/figs/post-20-09-21/banner.png" width="500px">
-___
-#### Imaginal Module
----
-- All requests to the imaginal module through the imaginal buffer are requests to create a new chunck.
-- The Amount of time it takes to create a chunk   =   <span style="color:red">0.2</span> sec
-    ```lisp
-      (p encode-letter
-         ...
-         ?imaginal&gt;          ; //query imaginal to verify if it is available
-           state free
-       ==&gt;
-         ...
-         +imaginal&gt;             ;// send request to imaginal to create a new chunk
-           isa array
-           letter =letter
-    ```
-#### Vision Module
----
-- can parse text, lines, button features from the displays created.
-- tow buffer :
- - **visual-location**
- ```lisp
-     (p find-location
+
+<h4 id="imaginal-module">Imaginal Module</h4>
+<hr>
+<ul>
+<li>All requests to the imaginal module through the imaginal buffer are requests to create a new chunck.</li>
+<li>The Amount of time it takes to create a chunk   =   <span style="color:red">0.2</span> sec<pre><code class="language-lisp">    (p encode-letter
        ...
-     ==&gt;
-       +visual-location&gt;  
-         :attended nil  ;// request for a location which the model has not attended
-       :attended t    ;// request for a location which has been attended previously
-         :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
-       ...
-     )
-  ```
- - **visual**
-  ```lisp
-     (p attend-letter
-       =goal&gt;
-         ...
-       =visual-location&gt;   ;// if there is a chunk in the visual-location buffer
-       ?visual&gt;            ;// query visual buffer if it is available for a new request
+       ?imaginal&gt;          ; //query imaginal to verify if it is available
          state free
      ==&gt;
-      +visual&gt;     ;// move attention to the location specified in visual-location
-         cmd         move-attention
-         screen-pos  =visual-location
-       =goal&gt;
-         ...
-  ```
-- for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.
-- the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.
-
+       ...
+       +imaginal&gt;             ;// send request to imaginal to create a new chunk
+         isa array
+         letter =letter</code></pre>
+<h4 id="vision-module">Vision Module</h4>
+</li>
+</ul>
+<hr>
+<ul>
+<li>can parse text, lines, button features from the displays created.</li>
+<li>tow buffer :<ul>
+<li><strong>visual-location</strong><pre><code class="language-lisp"> (p find-location
+   ...
+ ==&gt;
+   +visual-location&gt;  
+     :attended nil  ;// request for a location which the model has not attended
+   :attended t    ;// request for a location which has been attended previously
+     :attended new    ;// the model has not attended to the location and the object has also recently appeared in the visual scene
+   ...
+ )</code></pre>
+</li>
+<li><strong>visual</strong><pre><code class="language-lisp"> (p attend-letter
+   =goal&gt;
+     ...
+   =visual-location&gt;   ;// if there is a chunk in the visual-location buffer
+   ?visual&gt;            ;// query visual buffer if it is available for a new request
+     state free
+ ==&gt;
+  +visual&gt;     ;// move attention to the location specified in visual-location
+     cmd         move-attention
+     screen-pos  =visual-location
+   =goal&gt;
+     ...</code></pre>
+</li>
+</ul>
+</li>
+<li>for visual-location buffer of vision module, there is no time involved in handling the request (in such case, no need to query), reflects the assumption that there is a perceptual system operating in parallel within the vision module.</li>
+<li>the state of vision module for the visual-location buffer is <span style="color:red">always free</span>.</li>
+</ul>
 <h4 id="motor-module">Motor Module</h4>
 <hr>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">

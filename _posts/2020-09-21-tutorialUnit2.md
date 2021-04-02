@@ -7,7 +7,7 @@ tags: ACTR_Tutorial ACT-R
 ---
 #### Perception and Motor Actions
 <img src="{{site.baseurl}}/assets/figs/post-20-09-21/banner.png" width="500px">
-___
+
 #### Imaginal Module
 ---
 - All requests to the imaginal module through the imaginal buffer are requests to create a new chunck.

@@ -7,7 +7,7 @@ tags: ACTR_Tutorial ACT-R
 ---
 #### Introduction to ACT-R
 <img src="{{site.baseurl}}/assets/figs/post-20-03-03/eg.png" width="500px">
-___
+
 #### Contents
 ------
   - 1.1 Knowledge Representations
