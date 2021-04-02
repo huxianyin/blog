@@ -7,7 +7,7 @@ tags: ACTR_Tutorial ACT-R
 ---
 #### Attention
 <img src="{{site.baseurl}}/assets/figs/post-20-11-03/demo.gif" width="500px">
-___
+
 
 #### 1. Visual Locations
 ___
@@ -163,7 +163,6 @@ ___
       	- for words : strings
       	- for digits : number
   	- event : contains a chunk that relates to the event that was used to attend the sound
-  -
 	```lisp
 		 (p sound-respond-low
 		 	=goal>
@@ -184,7 +183,6 @@ ___
 
 #### 5.  Typing and Control
 - goal module creates a new chunk immediately in response to a request (imaginal module takes time to create new chunk)
-  -
 ```lisp
 (p start-report
 	 	=goal>
@@ -210,7 +208,6 @@ ___
 	- (spp sound-respond-low :u 10)
 	- (spp sound-respond-high :u 10)
 	- (spp sound-respond-middium :u 10)
-- 
 	```lisp
 	...
 	==>

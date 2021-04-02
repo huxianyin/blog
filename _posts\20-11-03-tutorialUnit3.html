@@ -29,7 +29,7 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <h2 id="tags-actr_tutorial-act-r">tags: ACTR_Tutorial ACT-R</h2>
 <h4 id="attention">Attention</h4>
 <img src="{{site.baseurl}}/assets/figs/post-20-11-03/demo.gif" width="500px">
-___
+
 
 <h4 id="1-visual-locations">1. Visual Locations</h4>
 <hr>
@@ -206,8 +206,7 @@ ___
 <li>for digits : number</li>
 </ul>
 </li>
-<li>event : contains a chunk that relates to the event that was used to attend the sound
--<pre><code class="language-lisp"> (p sound-respond-low
+<li>event : contains a chunk that relates to the event that was used to attend the sound<pre><code class="language-lisp"> (p sound-respond-low
      =goal&gt;
          isa    read-letters
          tone   nil
@@ -228,8 +227,7 @@ ___
 </ul>
 <h4 id="5-typing-and-control">5.  Typing and Control</h4>
 <ul>
-<li>goal module creates a new chunk immediately in response to a request (imaginal module takes time to create new chunk)
--<pre><code class="language-lisp">(p start-report
+<li>goal module creates a new chunk immediately in response to a request (imaginal module takes time to create new chunk)<pre><code class="language-lisp">(p start-report
        =goal&gt;
            isa read-letters
            tone =tone
@@ -254,14 +252,13 @@ ___
 <li>(spp detected-sound :u 10)</li>
 <li>(spp sound-respond-low :u 10)</li>
 <li>(spp sound-respond-high :u 10)</li>
-<li>(spp sound-respond-middium :u 10)</li>
-</ul>
+<li>(spp sound-respond-middium :u 10)<pre><code class="language-lisp">...
+==&gt;
+   +mannual&gt;
+       cmd  press-key
+       key  =val</code></pre>
 </li>
-<li><pre><code class="language-lisp">  ...
-  ==&gt;
-       +mannual&gt;
-           cmd  press-key
-           key  =val</code></pre>
+</ul>
 </li>
 </ul>
 <hr>
