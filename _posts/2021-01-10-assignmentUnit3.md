@@ -5,7 +5,7 @@ date:   2021-01-10 00:43:16 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-<img src="{{site.baseurl}}/assets/figs/post-21-01-10/resul.png" width="500px">
+<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="500px">
 
 
 #### Task
@@ -15,6 +15,7 @@ ___
 
 
 #### Model (Hu's solution)
+___
 ```lisp
 (clear-all)
 
@@ -155,13 +156,14 @@ ___
 ```console
 ? (subitize-trial)
 ```
-<img src="{{site.baseurl}}/assets/figs/post-21-01-10/resul.png" width="500px">
+<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="500px">
 
 ```console
 ? (subitize-experiment)
 ```
-CORRELATION:  0.986
-MEAN DEVIATION:  0.194
+- CORRELATION:  0.986
+- MEAN DEVIATION:  0.194
+
 |  Items |  Current Participant | Original Experiment  |
 | ---- | ---- |---- |
 |  1    |     0.54  (T  )        |       0.60
