@@ -5,7 +5,7 @@ date:   2021-01-10 00:43:16 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="500px">
+<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="300px">
 
 
 #### Task
@@ -153,16 +153,13 @@ ___
 ```
 #### Result
 ___
-```console
-? (subitize-trial)
-```
-<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="500px">
-
+- Run the model
 ```console
 ? (subitize-experiment)
 ```
-- CORRELATION:  0.986
-- MEAN DEVIATION:  0.194
+- Fit human data
+  - CORRELATION:  0.986
+  - MEAN DEVIATION:  0.194
 
 |  Items |  Current Participant | Original Experiment  |
 | ---- | ---- |---- |
