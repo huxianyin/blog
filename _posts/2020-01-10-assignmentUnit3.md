@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "ACT-R Assignment Unit3"
-date:   2021-01-10 00:43:16 +0800
+date:   2020-01-10 00:43:16 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-<img src="{{site.baseurl}}/assets/figs/post-21-01-10/result.png" width="300px">
+<img src="{{site.baseurl}}/assets/figs/post-20-01-10/result.png" width="300px">
 
 
 #### Task

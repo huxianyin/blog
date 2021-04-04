@@ -29,9 +29,7 @@ ___
 
 #### 3.Base-level Learning
 ___
-- ```math
-B_i = ln(\sum_{j=1}^n{t_j^{-d}})
-```
+- $ B_i = ln(\sum_{j=1}^n{t_j^{-d}}) $
 - d : decay rate
 - n : The number of presentations for chunk i.
 - t  : The time since the jth presentation.
