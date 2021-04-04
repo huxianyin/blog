@@ -29,7 +29,7 @@ ___
 
 #### 3.Base-level Learning
 ___
-- $ B_i = ln(\sum_{j=1}^n{t_j^{-d}}) $
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large B_i = ln(\sum_{j=1}^n{t_j^{-d}})" />
 - d : decay rate
 - n : The number of presentations for chunk i.
 - t  : The time since the jth presentation.
