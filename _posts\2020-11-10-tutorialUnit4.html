@@ -94,10 +94,10 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <li>take time for computation</li>
 <li>an approximation approach<ul>
 <li>turning on the optimized learning parameter - :ol.&#x3000;&#x3000;(default  is  on)</li>
-<li>&#x4F7F;&#x7528;&#x6761;&#x4EF6;&#xFF1A; the presentations are approximately uniformly distributed over the time since the item was created.
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;B_i = ln(\frac{n}{1-d}) - d * ln(L))" title="\Large B_i = ln(\frac{n}{1-d}) - d * ln(L)"></li>
+<li>&#x4F7F;&#x7528;&#x6761;&#x4EF6;&#xFF1A; the presentations are approximately uniformly distributed over the time since the item was created.</li>
 </ul>
 </li>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;B_i = ln(\frac{n}{1-d}) - d * ln(L))" title="\Large B_i = ln(\frac{n}{1-d}) - d * ln(L)"></li>
 <li>n: The number of presentations of chunk i.</li>
 <li>L: The lifetime of chunk i (the time since its creation).</li>
 <li>d: The decay parameter.</li>
@@ -105,8 +105,8 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <h4 id="5-noise">5.Noise</h4>
 <hr>
 <ul>
-<li>logistic distribution characterized by a parameter s
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;\sigma^2 = s^2*(\pi^2/3)" title="\Large \sigma^2 = s^2*(\pi^2/3)"></li>
+<li>logistic distribution characterized by a parameter s</li>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;\sigma^2 = s^2*(\pi^2/3)" title="\Large \sigma^2 = s^2*(\pi^2/3)"></li>
 <li>two source of noise<ul>
 <li>permanent noise (s is set by <span style="color:red"> :pns</span>))</li>
 <li>instantaneous noise  ( recomputed at each retrieval attempt )   ( s is set by <span style="color:red"> :ans</span>)</li>
@@ -120,18 +120,20 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 </ul>
 <h4 id="6-probability-of-recall">6.Probability of Recall</h4>
 <hr>
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" title="\Large recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}">
-- In fact, when &#x3C4; = Ai, the probability of recall is .5
-- s controll the sensitivity of recall
-    - s &#x63A5;&#x8FD1;0 &#xFF1A;  &#x6982;&#x7387;&#x5728;0&#xFF0C;1&#x4E4B;&#x95F4;&#x53CD;&#x590D;&#x6A2A;&#x6761;
-    - s &#x8F83;&#x5927;  &#xFF1A;  &#x5E73;&#x6ED1;&#x7684;sigmoid&#x66F2;&#x7EBF;
-
-
+<ul>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" title="\Large recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}"></li>
+<li>In fact, when &#x3C4; = Ai, the probability of recall is .5</li>
+<li>s controll the sensitivity of recall<ul>
+<li>s &#x63A5;&#x8FD1;0 &#xFF1A;  &#x6982;&#x7387;&#x5728;0&#xFF0C;1&#x4E4B;&#x95F4;&#x53CD;&#x590D;&#x6A2A;&#x6761;</li>
+<li>s &#x8F83;&#x5927;  &#xFF1A;  &#x5E73;&#x6ED1;&#x7684;sigmoid&#x66F2;&#x7EBF;</li>
+</ul>
+</li>
+</ul>
 <h4 id="7-retrieval-latency">7.Retrieval Latency</h4>
 <hr>
 <ul>
-<li>The activation of a chunk also determines how quickly it can be retrieved.
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;Time = F*e^{-A}" title="\Large Time = F*e^{-A}"></li>
+<li>The activation of a chunk also determines how quickly it can be retrieved.</li>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;Time = F*e^{-A}" title="\Large Time = F*e^{-A}"></li>
 <li>A: The activation of the chunk which is retrieved.</li>
 <li>F: The latency factor (set using the <span style="color:red"> :lf </span>)).</li>
 <li>if no chunk match or no chunk exceed threshold, then time it takes for the failure to be signaled is :<ul>
@@ -208,15 +210,24 @@ categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
 <hr>
 <ul>
 <li>4 parameters should be set<ul>
-<li>the retrival threshold  = -2 (default)
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;\tau   = -2" title="\Large \tau   = -2"></li>
-<li>the instantaneous noise = 0.5 (determines how quickly probability of retrieval changes as we move past the threshold.)
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;s=0.5" title="\Large s=0.5"></li>
-<li>latency factor is set at 0.4.   (determines the magnitude of the activation effects on latency.)
-<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;F=0.4" title="\Large F=0.4"></li>
-<li>decay rate for base-level learning is set to the value 0.5 (recommend it be set for most tasks )<img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;d=0.5" title="\Large d=0.5">
+<li>the retrival threshold  = -2 (default)<ul>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;\tau   = -2" title="\Large \tau   = -2"></li>
+</ul>
+</li>
+<li>the instantaneous noise = 0.5 (determines how quickly probability of retrieval changes as we move past the threshold.)<ul>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;s=0.5" title="\Large s=0.5"></li>
+</ul>
+</li>
+<li>latency factor is set at 0.4.   (determines the magnitude of the activation effects on latency.)<ul>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;F=0.4" title="\Large F=0.4"></li>
+</ul>
+</li>
+<li>decay rate for base-level learning is set to the value 0.5 (recommend it be set for most tasks )<ul>
+<li><img src="https://latex.codecogs.com/svg.latex?\Large&amp;space;d=0.5" title="\Large d=0.5">
 
 
+</li>
+</ul>
 </li>
 </ul>
 </li>

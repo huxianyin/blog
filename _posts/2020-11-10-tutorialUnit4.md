@@ -50,7 +50,7 @@ ___
 - an approximation approach
 	- turning on the optimized learning parameter - :ol.　　(default  is  on)
 	- 使用条件： the presentations are approximately uniformly distributed over the time since the item was created.
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;B_i = ln(\frac{n}{1-d}) - d * ln(L))" title="\Large B_i = ln(\frac{n}{1-d}) - d * ln(L)" />
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;B_i = ln(\frac{n}{1-d}) - d * ln(L))" title="\Large B_i = ln(\frac{n}{1-d}) - d * ln(L)" />
 - n: The number of presentations of chunk i.
 - L: The lifetime of chunk i (the time since its creation).
 - d: The decay parameter.
@@ -59,7 +59,7 @@ ___
 #### 5.Noise
 ___
 - logistic distribution characterized by a parameter s
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\sigma^2 = s^2*(\pi^2/3)" title="\Large \sigma^2 = s^2*(\pi^2/3)" />
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\sigma^2 = s^2*(\pi^2/3)" title="\Large \sigma^2 = s^2*(\pi^2/3)" />
 - two source of noise
 	- permanent noise (s is set by <span style="color:red"> :pns</span>))
 	- instantaneous noise  ( recomputed at each retrieval attempt )   ( s is set by <span style="color:red"> :ans</span>)
@@ -69,7 +69,7 @@ ___
 
 #### 6.Probability of Recall
 ___
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" title="\Large recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" />
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" title="\Large recallP_i = \frac{1}{1+e^{\frac{\tau-A_i}{s}}}" />
 - In fact, when τ = Ai, the probability of recall is .5
 - s controll the sensitivity of recall
 	- s 接近0 ：  概率在0，1之间反复横条
@@ -79,7 +79,7 @@ ___
 #### 7.Retrieval Latency
 ___
 - The activation of a chunk also determines how quickly it can be retrieved.
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;Time = F*e^{-A}" title="\Large Time = F*e^{-A}" />
+- <img src="https://latex.codecogs.com/svg.latex?\Large&space;Time = F*e^{-A}" title="\Large Time = F*e^{-A}" />
 - A: The activation of the chunk which is retrieved.
 - F: The latency factor (set using the <span style="color:red"> :lf </span>)).
 - if no chunk match or no chunk exceed threshold, then time it takes for the failure to be signaled is :
@@ -151,13 +151,13 @@ ___
 ___
 - 4 parameters should be set
 	- the retrival threshold  = -2 (default)
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;\tau   = -2" title="\Large \tau   = -2" />
+		- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\tau   = -2" title="\Large \tau   = -2" />
 	- the instantaneous noise = 0.5 (determines how quickly probability of retrieval changes as we move past the threshold.)
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;s=0.5" title="\Large s=0.5" />
+		- <img src="https://latex.codecogs.com/svg.latex?\Large&space;s=0.5" title="\Large s=0.5" />
 	- latency factor is set at 0.4.   (determines the magnitude of the activation effects on latency.)
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;F=0.4" title="\Large F=0.4" />
+		- <img src="https://latex.codecogs.com/svg.latex?\Large&space;F=0.4" title="\Large F=0.4" />
 	- decay rate for base-level learning is set to the value 0.5 (recommend it be set for most tasks )
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;d=0.5" title="\Large d=0.5" />
+		- <img src="https://latex.codecogs.com/svg.latex?\Large&space;d=0.5" title="\Large d=0.5" />
 
 
 #### 10. The Activation trace
