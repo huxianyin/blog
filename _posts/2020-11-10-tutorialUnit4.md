@@ -6,9 +6,8 @@ categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
 #### Activation of Chunks and Base-Level Learning
--  Introduce the subsymbolic part of ACT-R
 - <img src="{{site.baseurl}}/assets/figs/post-20-11-10/result2.png" width="500px">
-
+-  Introduce the subsymbolic part of ACT-R
 
 #### 1. Introduction
 ___
