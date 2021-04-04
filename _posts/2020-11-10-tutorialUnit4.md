@@ -7,7 +7,7 @@ tags: ACTR_Tutorial ACT-R
 ---
 #### Activation of Chunks and Base-Level Learning
 -  Introduce the subsymbolic part of ACT-R
-<img src="{{site.baseurl}}/assets/figs/post-20-11-10/result2.png" width="500px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-10/result2.png" width="500px">
 
 
 #### 1. Introduction
@@ -109,7 +109,7 @@ ___
 - first time presented:  learn the pairs
 - 随着练习次数增加（trial），回答准确率和反应速度上升
 - モデルの流れ図：
-- <img src="{{site.baseurl}}/assets/figs/post-20-11-10/flowchart.png" width="500px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-10/flowchart.png" width="250px">
 - detect-study-item 和 associate production:  加强记忆
 - ```lisp
 (p detect-study-item
