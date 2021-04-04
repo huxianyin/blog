@@ -30,7 +30,6 @@ ___
 #### 3.Base-level Learning
 ___
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;B_i = ln(\sum_{j=1}^n{t_j^{-d}})" title="\Large B_i = ln(\sum_{j=1}^n{t_j^{-d}})" />
-- $  $
 - d : decay rate
 - n : The number of presentations for chunk i.
 - t  : The time since the jth presentation.
