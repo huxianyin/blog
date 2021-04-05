@@ -27,7 +27,7 @@ ___
 ____
 - implement a model doing the task in control group
 - task code : zbrodoff.lisp
-<img src="{{site.baseurl}}/assets/figs/post-20-11-12/flowchart.png" width="300px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-12/flowchart.png" width="300px">
 
 
 #### Model (Hu's Solution)
@@ -309,7 +309,7 @@ ___
 	- base level activation <span style="color:red">(:bll)</span>= 0.5
 	- <img src="{{site.baseurl}}/assets/figs/post-20-11-12/parameter_tuning.png" width="300px">
 
-#### Probelm Shooting：
+#### Probelm Shooting
 ___
  - falseが答えの場合は retrieval strategy は発動しない
  - 解決：retrievle do not check "result" only check there is something in the result:
