@@ -88,7 +88,7 @@ ___
           - 只运行 retrieve-from-person  数次
           - 只运行 retrieve-from-location 数次
           - 平均结果
-    - 
+    -
 ```lisp
 (P retrieve-from-person
 	=imaginal>
@@ -158,13 +158,9 @@ ___
 #### 5.Partial Matching
 ___
 - modeling errors human make !
-	- commision  (回忆错误)
+	- commision  (回忆错误) <img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{wrongChunk}  > A_{rightChunk}" />
 
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{wrongChunk}  > A_{rightChunk}" />
-
-	- omission (想不起来任何)  
-
-	<img src="https://latex.codecogs.com/svg.latex?\Large&space;RT > A_i " />
+	- omission (想不起来任何) <img src="https://latex.codecogs.com/svg.latex?\Large&space;RT > A_i " />
 
 	- A case :
 		- probe :   The giant is in the bank
