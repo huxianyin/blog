@@ -41,10 +41,10 @@ ___
 ___
 - fan-model.lisp  (experiment code :  fan.lisp)
 - test for 1 sentence :
-	- > ? (fan-sentence 'lawyer'  'store' t 'person')
+  - > ? (fan-sentence 'lawyer'  'store' t 'person')
 - test for the whole experiment :
- - > ? (fan-experiment)
- - fitted parameter:
+  - > ? (fan-experiment)
+- fitted parameter:
 	- latency factor (<span style="color:red">:lf</span>)  = 0.63
 	- maximum associative strength (<span style="color:red">:max</span>) = 1.6
 	- <span style="color:red">W</span> = 1.0
