@@ -412,7 +412,7 @@ ___
 			- win :  create
 			- lose : not create
 	- set similarity: use hook function
-		- [$ similartiy(a,b) = -\frac{abs(a-b)}{max(a,b)}]
+		- <img src="https://latex.codecogs.com/svg.latex?\Large&space;similartiy(a,b) = -\frac{abs(a-b)}{max(a,b)}" />
 		- 该公式符合人类心理
 		- less difference more similar.
 		- larger numbers are more similar than smaller numbers for a given difference.
