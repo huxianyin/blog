@@ -247,7 +247,7 @@ ___
 			- > 0.050 PROCEDURAL MOD-BUFFER-CHUNK GOAL
 		- use "*" to modify:
 			- > 0.050 PROCEDURAL MODULE-MOD-REQUEST GOAL
-			0.050 GOAL MOD-BUFFER-CHUNK GOAL
+      - > 0.050 GOAL MOD-BUFFER-CHUNK GOAL
 		- use "=" , the goal module do modification directly
 		- use * ,  procedule will make a request, then goal module do the modification
 - **if one is trying to compare a model’s actions to human brain activity then knowing “where” an action occurred is important**
