@@ -421,13 +421,13 @@ ___
 		- control how the model is configured
 		> (sgp  
 		:esc t      ; enable subsymbolic component
-		:bll .5      ; base level learning with a decay rate of 0.5
-		:ol t         ;optimized learning equation to speed up
-		:sim-hook "1hit-bj-number-sims"    ;hook function of calculating similarities scores
-		:cache-sim-hook-results t    ; to cache the similarity values
-		:er t            ; Randomness is enabled
-		:l_ 0)          ; latency factor. all retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
+		> :bll .5      ; base level learning with a decay rate of 0.5
+		> :ol t         ;optimized learning equation to speed up
+		> :sim-hook "1hit-bj-number-sims"    ;hook function of calculating similarities scores
+		> :cache-sim-hook-results t    ; to cache the similarity values
+		> :er t            ; Randomness is enabled
+		> :l_ 0)          ; latency factor. all retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
 		retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
-		- how the mechanisms used in the model
+    - how the mechanisms used in the model
 		- >(sgp :v nil :ans .2 :mp 10.0 :rt -60)
 		- rt is very low and match scale is high (10) so that the model should always be able to retrieve some relevant chunk if there are any
