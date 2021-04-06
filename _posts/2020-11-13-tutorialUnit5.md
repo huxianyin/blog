@@ -38,8 +38,8 @@ ___
 		- > more fan , more respond time
 		- > foil take longer to respond than target
 
- #### 3.Fan Effect Model
- ___
+#### 3.Fan Effect Model
+___
 - fan-model.lisp  (experiment code :  fan.lisp)
 - test for 1 sentence :
 	- > ? (fan-sentence 'lawyer'  'store' t 'person')
