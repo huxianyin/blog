@@ -232,13 +232,13 @@ ___
 	(P harvest-arg2
 		=retrieval>
 		=imaginal>
-			isa				 plus-fact
-			addend2		nil
+			isa  plus-fact
+			addend2  nil
 		?imaginal>
-			state free
+			state  free
 ==>
 		*imaginal>     ;// * means  a modification request. does not clear the buffer automatically
-			addend2     =retreival
+			addend2  =retreival
 	)
 	```
 	- modification request can be done to <span style="color:orange">goal</span> and <span style="color:orange">imaginal</span> module, in the same way
