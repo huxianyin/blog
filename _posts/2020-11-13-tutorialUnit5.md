@@ -425,8 +425,7 @@ ___
 		:sim-hook "1hit-bj-number-sims"    ;hook function of calculating similarities scores
 		:cache-sim-hook-results t    ; to cache the similarity values
 		:er t            ; Randomness is enabled
-		:l_ 0)          ; latency factor. all retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
-		retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
+		:lf 0)          ; latency factor. all retrievals complete immediately becase we have a time limit of 10 sec but do not have to fit latency data.
     ```
     - how the mechanisms used in the model
 		- >(sgp :v nil :ans .2 :mp 10.0 :rt -60)
