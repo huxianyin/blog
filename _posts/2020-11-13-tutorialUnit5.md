@@ -7,7 +7,6 @@ tags: ACTR_Tutorial ACT-R
 ---
 #### Activation and Context
 <img src="{{site.baseurl}}/assets/figs/post-20-11-14/banner.png" width="500px">
-___
 
 #### 1. Spreading Activation
 ___
