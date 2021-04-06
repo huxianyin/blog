@@ -48,8 +48,8 @@ ___
 	- latency factor (<span style="color:red">:lf</span>)  = 0.63
 	- maximum associative strength (<span style="color:red">:max</span>) = 1.6
 	- <span style="color:red">W</span> = 1.0
-- compare the result with human data :
- 	- R = 0.864 after parameter tuning
+- compare the result with human data
+  - R = 0.864 after parameter tuning
 	- <img src="{{site.baseurl}}/assets/figs/post-20-11-14/human.png" width="300px">
 - **Model Representations**
 	- words : ( base-level activation  = 10 )
