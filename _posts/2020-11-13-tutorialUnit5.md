@@ -88,7 +88,6 @@ ___
           - 只运行 retrieve-from-person  数次
           - 只运行 retrieve-from-location 数次
           - 平均结果
-    -
 ```lisp
 (P retrieve-from-person
 	=imaginal>
@@ -212,7 +211,7 @@ ___
 		- 由于noise的影响， [$ A_{item6}]  >  [$ A_{item5}]
 		- similarity is defined:
 		- > (set-similarities (first second -0.5) (second third -0.5))
-		- for  those different values that is not specified by "set-similarities" command, will have the default value of maximum difference which is -1.0, in this case : (first third -1.0)
+		- for  those different values that is not specified by "set-similarities" command, will have the default value of maximum difference which is -1.0
 - Error of Omission
 	- 没有回忆起9
 	- due to random noise,  <img src="https://latex.codecogs.com/svg.latex?\Large&space;A_{9} < rt" />
@@ -222,7 +221,7 @@ ___
 #### 7.Simple Addition
 ___
 - human data (respond time)  :  (4-year-old kids)
-	- <img src="{{site.baseurl}}/assets/figs/post-20-11-14/addition_human.png" width="300px">
+	- <img src="{{site.baseurl}}/assets/figs/post-20-11-14/addition_human.png" width="500px">
 	- strategy:
 		- recall the result
 		- if can't recall, then count
