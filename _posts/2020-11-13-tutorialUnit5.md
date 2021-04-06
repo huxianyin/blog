@@ -88,6 +88,7 @@ ___
           - 只运行 retrieve-from-person  数次
           - 只运行 retrieve-from-location 数次
           - 平均结果
+    - 
 ```lisp
 (P retrieve-from-person
 	=imaginal>
@@ -122,9 +123,9 @@ ___
 	- >laywer is in the store
 	- location : 1fan  ,   person : 1fan
 	- <span style="color:red">:act</span>  (activation trace parameter ) enabled to see the activation values when retrieve
-	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;A_i = B_i + \sum_{k}{\sum_j{}{W_{kj}S_{ji}+\epsilon}}". title="" />
+	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;A_i = B_i + \sum_{k}{\sum_j{}{W_{kj}S_{ji}+\epsilon}}" />
 
-	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;B_i = 0"  , "S=1.6" title="" />
+	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;B_i = 0"/> , <img src="https://latex.codecogs.com/svg.latex?\Large&space;S=1.6"/>
 
 	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;S_{ji} = S-ln(fan_i)=1.6 - ln(2) = 0.907" title="" />
 
