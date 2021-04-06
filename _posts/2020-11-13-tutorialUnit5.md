@@ -5,8 +5,8 @@ date:   2020-11-14 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
-<img src="{{site.baseurl}}/assets/figs/post-20-11-14/banner.png" width="500px">
 #### Activation and Context
+<img src="{{site.baseurl}}/assets/figs/post-20-11-14/banner.png" width="500px">
 ___
 
 #### 1. Spreading Activation
