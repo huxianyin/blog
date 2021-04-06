@@ -183,6 +183,7 @@ ___
 			- 不符合条件： 给予惩罚，降低激活值
 
 #### 6.Grouped Recall
+___
 - A example for illustrate partial matching
 - Only use the cognitive part
 	- no perceptual or motor is used
