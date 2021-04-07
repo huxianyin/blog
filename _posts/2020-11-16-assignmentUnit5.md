@@ -28,7 +28,7 @@ ____
 	- Provide a strategy other than just choosing to stay when no relevant information can be retrieved.
 - runing the game
 	- play multiple hands :
-	- > ? (onehit-hands 5)   5:  bumber of hands to play
+	  - > ? (onehit-hands 5)   5:  bumber of hands to play
 	- return (1 4 0 0 )
 		- model’s wins
 		- the opponent’s wins
@@ -51,7 +51,7 @@ ____
 		- 10 : frequency = 0.308 (around 4 times of cards of 1-9 )
 
 - reference solution
-	- 勝ち率を上昇させる．improve from 37% to 40% 
+	- 勝ち率を上昇させる．improve from 37% to 40%
 
 
 #### Model
