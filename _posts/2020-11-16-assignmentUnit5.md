@@ -11,8 +11,47 @@ tags: ACTR_Assignment ACT-R
 
 #### Task description
 ____
+- do not know:
+	- opponent's strategy
+	- the distribution of cards in the decks
+- model 's description:
+	- >At the start of the game, can I remember a similar situation and the action I took? If so, make that action. If not then I should stay. When I get the feedback is there some pattern in the cards, actions, and results which indicates the action I should have taken? If so create a memory of the situation for this game and the action to take. Otherwise, just wait for the next hand to start.
+- two things can be done to make it better:
+	- the information which it considers when making its initial choice
+	- how it interprets the feedback so that it creates chunks which have appropriate information about the actions it should take
+		- Change  learned-info chunk-type  (the current model only considers one of its own cards).
+		- Change the start production
+		- Change or replace the results-should-hit and results-should-stay productions
+- Advanced improvement
+	- Change the noise level and the mismatch penalty parameters to adjust the learning rate or flexibility of the model.
+	- Add more productions to analyze the starting position either before or after retrieving an appropriate chunk.
+	- Provide a strategy other than just choosing to stay when no relevant information can be retrieved.
+- runing the game
+	- play multiple hands :
+	- > ? (onehit-hands 5)   5:  bumber of hands to play
+	- return (1 4 0 0 )
+		- model’s wins
+		- the opponent’s wins
+		- the times when both players bust
+		- the times when they are tied.
+	- play blocks
+		- > ? (onehit-blocks 2 5)
+	- play the experiment
+		- > ? (onehit-learning 100)
+        - return :
+			- win rates of 4 blocks of 25 hands
+			- win rates of 20 blocks of 5  hands  (more detailed and is ploted in a graph)
+	- play yourself
+		- > ? (play-against-model 1)  1:  bumber of hands to play
+- default game setting:
+	- opponent's strategy:
+		- always stays with a score of 15 or more
+	- card distribution:
+		- 1-9 : frequency  = 0.077
+		- 10 : frequency = 0.308 (around 4 times of cards of 1-9 )
 
-
+- reference solution
+	- 勝ち率を上昇させる．improve from 37% to 40% 
 
 
 #### Model
