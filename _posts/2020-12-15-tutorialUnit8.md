@@ -60,10 +60,10 @@ ___
 (P MEDIUM
     =GOAL>
        VALUE  [MEDIUM, SMALL, -0.5]       ;// printed in the trace of conflict set indicating this production is a partial match
-      VALUE SMALL                                 ;// binded value is the value in the buffer (not the one in the production)
+       VALUE SMALL                                 ;// binded value is the value in the buffer (not the one in the production)
    ==>
-     !OUTPUT! SMALL
-   -GOAL>
+    !OUTPUT! SMALL
+    -GOAL>
  )
 ```
 	- Turning on ppm
@@ -82,18 +82,18 @@ ___
 		- Strategy choice
 ```lisp
 (p decide-over
-	=imaginal>
-      isa                encoding
-      goal-length    =d          ;比较goal和c的长度
+	  =imaginal>
+      isa               encoding
+      goal-length       =d          ;比较goal和c的长度
       b-len             =d
 ==>
 )
 ```
 ```lisp
 (p decide-under
-	=imaginal>
-      isa                encoding
-      goal-length    =d          ;比较goal和b的长度，partial matching机制可以自动帮助我们调整utility
+	  =imaginal>
+      isa               encoding
+      goal-length       =d          ;比较goal和b的长度，partial matching机制可以自动帮助我们调整utility
       c-len             =d
 ==>
 )
@@ -111,10 +111,12 @@ ___
 	- the ability to test arbitrary slots in the conditions of a production.
 	- 根据上下文，测试任意slot （之前都是只能测试写好在程序中的固定slot）
 	- <span  style="color:orange">slot name can also be a variable and dynamiclly instantiated</span>
-  - > (p start
-  - > =goal>
-  - > context  =context     ;context slot保存需要测试的slot名
-? =context =x           ; 测试的slot是一个变量
+```lisp
+ (p start
+    =goal>
+      context  =context     ;context slot保存需要测试的slot名
+      =context =x           ; 测试的slot是一个变量
+```
 	- can be within or across buffer.
 	- multiple times is OK
 - **Arbitrary slots in actions**
