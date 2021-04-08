@@ -111,9 +111,9 @@ ___
 	- the ability to test arbitrary slots in the conditions of a production.
 	- 根据上下文，测试任意slot （之前都是只能测试写好在程序中的固定slot）
 	- <span  style="color:orange">slot name can also be a variable and dynamiclly instantiated</span>
-> (p start
-> =goal>
-> context  =context     ;context slot保存需要测试的slot名
+  - > (p start
+  - > =goal>
+  - > context  =context     ;context slot保存需要测试的slot名
 ? =context =x           ; 测试的slot是一个变量
 	- can be within or across buffer.
 	- multiple times is OK
