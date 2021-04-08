@@ -34,7 +34,7 @@ ___
 	- this disallowing can control which items are allowed to be partial matched in productions.
 	- default is -1.0 (max difference , min similarity)
 
-- ** Conflict resolution with procedural partial matching**
+- **Conflict resolution with procedural partial matching**
 	- <img src="https://latex.codecogs.com/svg.latex?\Large&space;Utility_i(t) = U_i(t) + \epsilon + \sum_j{ppm*similarity(d_j,v_j)}" />
 		-  <img src="https://latex.codecogs.com/svg.latex?\Large&space;d_j"/> : desired value for slot j in production i
 
@@ -105,31 +105,31 @@ ___
 - Useful where
 	- instruction or example following are involved
 	- flexibility or context dependence are necessary
-- ** Basic Operation**
+- **Basic Operation**
 	- demo :  /tutorial/unit8/simple-dynamic-model.lisp
-- ** Arbitrary slots in conditions**
+- **Arbitrary slots in conditions**
 	- the ability to test arbitrary slots in the conditions of a production.
 	- 根据上下文，测试任意slot （之前都是只能测试写好在程序中的固定slot）
 	- <span  style="color:orange">slot name can also be a variable and dynamiclly instantiated</span>
 > (p start
- =goal>
- context  =context     ;context slot保存需要测试的slot名
- =context =x           ; 测试的slot是一个变量
+> =goal>
+> context  =context     ;context slot保存需要测试的slot名
+? =context =x           ; 测试的slot是一个变量
 	- can be within or across buffer.
 	- multiple times is OK
-- ** Arbitrary slots in actions**
+- **Arbitrary slots in actions**
 	- A variable may be used to specify a slot in any
 		- modification
 		- modification request
 		- request action of a production
 	- if undefined slot is used, it may cause warning or error (depending on buffer)
-- ** Extending chunks with new slots**
+- **Extending chunks with new slots**
 	- add new slot names to chunk
 	- in the trace, it shows :
 	- >EXTEND-BUFFER-CHUNK IMAGINAL
-- ** Constraints on dynamic pattern matching**
+- **Constraints on dynamic pattern matching**
 	- No Search
-		- finding a slot based on its value (NP-hard problems)
+	- finding a slot based on its value (NP-hard problems)
 ```lisp
  (p not-allowed
  =goal>
@@ -137,7 +137,6 @@ ___
  =slot 1
 ```
 	- One level of indirection
-		-
 ```lisp
  (p also-not-allowed
  =goal>
@@ -149,7 +148,7 @@ ___
 ```
 		- such a mechanism appears to be realizable within the basal ganglia of the human brain as shown in previous research
 
-- ** Example Models**
+- **Example Models**
 	- Semantic Model
 		- knowledge representation
 			- is dangerous
