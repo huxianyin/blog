@@ -30,9 +30,9 @@ ___
     - overshoot : start with a "too long" one ,then saw off others
 
 - The cognitive model doing the bst task:
-	- <img></img>
-	- over  =  | G - B |
-	- under  =  | G - C |
+	- <img src="{{site.baseurl}}/assets/figs/post-20-11-20/bst.gif" width="200px">
+	- over  = abs(G - B)
+	- under = abs(G - C)
 	- chose the one that is more closer ( 25 more closer than the other)
     - if there is a clear difference , than there will be 3 productions can fire:
       - decide-under / decide-over
@@ -75,22 +75,21 @@ ___
 	- ```lisp
 	+visual>
    		isa move-attention    ;// is equivalent to "cmd move-attention" 因为cmd的默认值就是move-attention
-   		screen-pos =c)
+   		screen-pos =c
 	```
     - 使用isa关键字，不仅能够定义chunk type ，同时也能创建chunk（通过使用默认值）
       - 没有默认值 : (**chunk-type** *_name* *_slot1*  *_slot2*)
       - 给特定slot设定默认值： (**chunk-type** *_name* ( *_slot1* 1) ( *_slot2* 2))
 
-- **Chunk-type hierarchy** 面向對象 继承制
-	- subtype
-		- use (:include typeA)
-		- line is a subtype of visual-object
-		- subtype contain all the slots that its parent has
-		- can contain additional slots
-		- can use different default value for some slots
-		- 一个子type能够继承多个父type
-		- > (chunk-type (d (:include a) (:include b)) slot4)   d 继承a和b
-		- the parent types also gain access to all of the slots from their children.
-		- 当使用父type来创建chunk的时候，也能够使用子type里的属性，比如：
-		- > (define-chunks (isa visual-object line_start 1 line_end 2) )
-		- line_start 和 line_end 是 子type “line”的属性
+- **Chunk-type hierarchy** 面向對象 继承制 (subtype)
+	- use (:include typeA)
+	- line is a subtype of visual-object
+	- subtype contain all the slots that its parent has
+	- can contain additional slots
+	- can use different default value for some slots
+	- 一个子type能够继承多个父type
+	- > (chunk-type (d (:include a) (:include b)) slot4)   d 继承a和b
+	- the parent types also gain access to all of the slots from their children.
+	- 当使用父type来创建chunk的时候，也能够使用子type里的属性，比如：
+	- > (define-chunks (isa visual-object line_start 1 line_end 2) )
+	- line_start 和 line_end 是 子type “line”的属性
