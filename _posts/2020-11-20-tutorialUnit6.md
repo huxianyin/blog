@@ -46,7 +46,8 @@ ___
 
   - <img src="https://latex.codecogs.com/svg.latex?\Large&space;\alpha" /> : learning rate  ,  default  = 0.2  <span style="color:red">:alpha</span>
 
-  - <img src="https://latex.codecogs.com/svg.latex?\Large&space;R_i(n) = reward  - time(from=selection, to=receive)" />
+  - <img src="https://latex.codecogs.com/svg.latex?\Large&space;R_i(n) = reward - time" />
+  - time is from production selected to reward received.
 
   - give less reward to more distant productions
   - the reinforcement goes back to all of the productions which have been selected between the current reward and the previous reward.
