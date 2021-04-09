@@ -5,7 +5,7 @@ date:   2020-11-20 14:42:14 +0800
 categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
-#### Selecting Productions on the Basis of Their Utilities and Learning these Utilities
+#### Utility Learning
 <img src="{{site.baseurl}}/assets/figs/post-20-11-20/bst.gif" width="500px">
 
 #### The Utility Theory
