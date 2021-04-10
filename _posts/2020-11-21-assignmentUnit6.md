@@ -51,14 +51,10 @@ ___
 ```python:task.py
 import actr
 import numpy as np
-
-#actr.load_act_r_model("ACT-R:tutorial;unit6;choice-model.lisp")
+# actr.load_act_r_model("ACT-R:tutorial;unit6;choice-model.lisp")
 actr.load_act_r_model("ACT-R:tutorial;unit6;choice-model-solution.lisp")
-
 choice_data = [0.664, 0.778, 0.804, 0.818]
-
 response = False
-
 virtual_mode = True
 
 def dominant_ratio(response):
@@ -147,7 +143,6 @@ def compare(n=100):
     print()
     print("correlation=",r)
     print("mean deviation=",md)
-
 
 if __name__ == "__main__":
     compare(100)

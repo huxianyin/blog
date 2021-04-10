@@ -76,13 +76,12 @@ ___
 <li><h5 id="task">Task</h5>
 <code>`</code>python:task.py
 import actr
-import numpy as np</li>
+import numpy as np<h1 id="actr-load_act_r_model-act-r-tutorial-unit6-choice-model-lisp-">actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model.lisp&quot;)</h1>
+actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model-solution.lisp&quot;)
+choice_data = [0.664, 0.778, 0.804, 0.818]
+response = False
+virtual_mode = True</li>
 </ul>
-<p>#actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model.lisp&quot;)
-actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model-solution.lisp&quot;)</p>
-<p>choice_data = [0.664, 0.778, 0.804, 0.818]</p>
-<p>response = False</p>
-<p>virtual_mode = True</p>
 <p>def dominant_ratio(response):
     if response.count(&quot;h&quot;) &gt; response.count(&quot;t&quot;):
         dominant = &quot;h&quot;
