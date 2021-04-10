@@ -6,7 +6,7 @@ categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
 <img src="{{site.baseurl}}/assets/figs/post-20-11-17/result.png" width="400px">
-#### Task
+#### Task : Coin Guess
 ___
 - develop a model for a "probability matching" experiment
 - Experiment Flow：
