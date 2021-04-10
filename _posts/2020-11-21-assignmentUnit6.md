@@ -49,7 +49,7 @@ ___
 ___
 - ##### Task
 
-```python:task.py
+```python
 import actr
 import numpy as np
 # actr.load_act_r_model("ACT-R:tutorial;unit6;choice-model.lisp")
