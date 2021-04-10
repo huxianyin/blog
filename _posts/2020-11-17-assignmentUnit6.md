@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "ACT-R Assignment Unit6"
-date:   2020-11-17 22:36:14 +0800
+date:   2020-11-21 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-<img src="{{site.baseurl}}/assets/figs/post-20-11-17/result.png" width="600px">
+<img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="600px">
 #### Task : Coin Guess
 ___
 - develop a model for a "probability matching" experiment
@@ -26,7 +26,7 @@ ___
 	- 4th block  :  0.818
 - should run multiple times of the experiment and average results
 - reference:
-  - <img src="{{site.baseurl}}/assets/figs/post-20-11-17/reference.png" width="400px">
+  - <img src="{{site.baseurl}}/assets/figs/post-20-11-21/reference.png" width="400px">
 - parameter tuning:
 	- noise in the utilities (set by the :egs parameter)
 	- rewards associated with successful and unsuccessful responses.
@@ -335,4 +335,4 @@ if __name__ == "__main__":
 ___
 - R = 0.991
 - MD = 0.023
-- <img src="{{site.baseurl}}/assets/figs/post-20-11-17/result.png" width="400px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="500px">
