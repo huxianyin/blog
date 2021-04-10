@@ -26,7 +26,7 @@ ___
 	- 4th block  :  0.818
 - should run multiple times of the experiment and average results
 - reference (goal)
-  - R = 0.994
+	- R = 0.994
 	- MD = 0.016
 - parameter tuning
 	- noise in the utilities (set by the :egs parameter)
@@ -48,7 +48,7 @@ ___
 #### Solution
 ___
 - ##### Task
-```python
+```python:task.py
 import actr
 import numpy as np
 
@@ -327,6 +327,7 @@ if __name__ == "__main__":
 
 )
 ```
+
 - ##### Parameter tuning:
 	- <span style="color:red">:ens</span> = 3
 	- reward of success = 10
