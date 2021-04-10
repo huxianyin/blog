@@ -26,7 +26,8 @@ ___
 	- 4th block  :  0.818
 - should run multiple times of the experiment and average results
 - reference:
-  - <img src="{{site.baseurl}}/assets/figs/post-20-11-21/reference.png" width="400px">
+  - R = 0.994
+	- MD = 0.016
 - parameter tuning:
 	- noise in the utilities (set by the :egs parameter)
 	- rewards associated with successful and unsuccessful responses.
