@@ -48,6 +48,7 @@ ___
 #### Solution
 ___
 - ##### Task
+
 ```python:task.py
 import actr
 import numpy as np
@@ -150,6 +151,7 @@ if __name__ == "__main__":
 
 
 - ##### Model
+
 ```lisp
 (clear-all)
 

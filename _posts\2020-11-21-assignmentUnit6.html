@@ -74,91 +74,110 @@ ___
 <hr>
 <ul>
 <li><h5 id="task">Task</h5>
-<code>`</code>python:task.py
-import actr
-import numpy as np<h1 id="actr-load_act_r_model-act-r-tutorial-unit6-choice-model-lisp-">actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model.lisp&quot;)</h1>
+</li>
+</ul>
+<pre><code class="language-python:task.py">import actr
+import numpy as np
+# actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model.lisp&quot;)
 actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model-solution.lisp&quot;)
 choice_data = [0.664, 0.778, 0.804, 0.818]
 response = False
-virtual_mode = True</li>
-</ul>
-<p>def dominant_ratio(response):
+virtual_mode = True
+
+def dominant_ratio(response):
     if response.count(&quot;h&quot;) &gt; response.count(&quot;t&quot;):
         dominant = &quot;h&quot;
     else:
         dominant = &quot;t&quot;
-    return np.mean(np.array(response)==dominant)</p>
-<p>def respond_to_key_press (model,key):
-    global response</p>
-<pre><code>response = key</code></pre><p>def trial(window,probability,person=True):
-    global response</p>
-<pre><code>actr.add_command(&quot;choice-response&quot;,respond_to_key_press,&quot;Choice task key response&quot;)
-actr.monitor_command(&quot;output-key&quot;,&quot;choice-response&quot;)
-actr.add_text_to_exp_window (window, &apos;choose&apos;, x=50, y=100)
+    return np.mean(np.array(response)==dominant)
 
-response = &apos;&apos;
 
-if person:
-    while response == &apos;&apos;:
-        actr.process_events()
-else:
-    actr.run(1,not virtual_mode)
+def respond_to_key_press (model,key):
+    global response
 
-actr.clear_exp_window(window)
+    response = key
 
-if actr.random(1.0) &lt; probability:
-    answer = &apos;heads&apos;
-else:
-    answer = &apos;tails&apos;
+def trial(window,probability,person=True):
+    global response
 
-actr.add_text_to_exp_window (window, answer, x=50, y=100)
+    actr.add_command(&quot;choice-response&quot;,respond_to_key_press,&quot;Choice task key response&quot;)
+    actr.monitor_command(&quot;output-key&quot;,&quot;choice-response&quot;)
+    actr.add_text_to_exp_window (window, &apos;choose&apos;, x=50, y=100)
 
-start = actr.get_time(False)
+    response = &apos;&apos;
 
-if person:
-    while (actr.get_time(False) - start) &lt; 1000:
-        actr.process_events()
-else:
-    actr.run(1,not virtual_mode)
-actr.clear_exp_window(window)
-actr.remove_command_monitor(&quot;output-key&quot;,&quot;choice-response&quot;)
-actr.remove_command(&quot;choice-response&quot;)
+    if person:
+        while response == &apos;&apos;:
+            actr.process_events()
+    else:
+        actr.run(1,not virtual_mode)
 
-return response</code></pre><p>def block(block_id,probability,person=True):
+    actr.clear_exp_window(window)
+
+    if actr.random(1.0) &lt; probability:
+        answer = &apos;heads&apos;
+    else:
+        answer = &apos;tails&apos;
+
+    actr.add_text_to_exp_window (window, answer, x=50, y=100)
+
+    start = actr.get_time(False)
+
+    if person:
+        while (actr.get_time(False) - start) &lt; 1000:
+            actr.process_events()
+    else:
+        actr.run(1,not virtual_mode)
+    actr.clear_exp_window(window)
+    actr.remove_command_monitor(&quot;output-key&quot;,&quot;choice-response&quot;)
+    actr.remove_command(&quot;choice-response&quot;)
+
+    return response
+
+def block(block_id,probability,person=True):
     block_res = []
     window = actr.open_exp_window(&quot;Choice Experiment&quot;,visible=False)
     actr.install_device(window)
     for i in range(12):
         response = trial(window,probability,person)
         block_res.append(response)
-    res = dominant_ratio(block_res)</p>
-<pre><code>#print(&quot;Block-&quot;,block_id+1,&quot;\tAccuracy=&quot;,hratio)
-return res</code></pre><p>def Experiment(num_block=4,probability=0.9,person=False):
+    res = dominant_ratio(block_res)
+
+    #print(&quot;Block-&quot;,block_id+1,&quot;\tAccuracy=&quot;,hratio)
+    return res
+
+
+def Experiment(num_block=4,probability=0.9,person=False):
     result_list = []
     for i in range(num_block):
         result_list.append(block(i,probability,person))
-    return result_list</p>
-<p>def compare(n=100):
+    return result_list
+
+
+def compare(n=100):
     result_list = []
     for i in range(n):
         result_list.append(Experiment(probability=0.9))
-        result_list.append(Experiment(probability=0.1))</p>
-<pre><code>result_list = np.array(result_list)
-avg_result = list(np.mean(result_list,axis=0))
-r=actr.correlation(avg_result,choice_data)
-md=actr.mean_deviation(avg_result,choice_data)
-print()
-print(&quot;Model Result:&quot;,avg_result)
-print(&quot;Human Result:&quot;,choice_data)
-print()
-print(&quot;correlation=&quot;,r)
-print(&quot;mean deviation=&quot;,md)</code></pre><p>if <strong>name</strong> == &quot;<strong>main</strong>&quot;:
-    compare(100)</p>
-<pre><code>
+        result_list.append(Experiment(probability=0.1))
 
-- ##### Model
-```lisp
-(clear-all)
+    result_list = np.array(result_list)
+    avg_result = list(np.mean(result_list,axis=0))
+    r=actr.correlation(avg_result,choice_data)
+    md=actr.mean_deviation(avg_result,choice_data)
+    print()
+    print(&quot;Model Result:&quot;,avg_result)
+    print(&quot;Human Result:&quot;,choice_data)
+    print()
+    print(&quot;correlation=&quot;,r)
+    print(&quot;mean deviation=&quot;,md)
+
+if __name__ == &quot;__main__&quot;:
+    compare(100)</code></pre>
+<ul>
+<li><h5 id="model">Model</h5>
+</li>
+</ul>
+<pre><code class="language-lisp">(clear-all)
 
 (define-model choice-solution
 
@@ -327,7 +346,8 @@ print(&quot;mean deviation=&quot;,md)</code></pre><p>if <strong>name</strong> ==
 (spp attend-letter :reward 0)
 (spp done-correct :reward 10)
 
-)</code></pre><ul>
+)</code></pre>
+<ul>
 <li><h5 id="parameter-tuning-">Parameter tuning:</h5>
 <ul>
 <li><span style="color:red">:ens</span> = 3</li>
