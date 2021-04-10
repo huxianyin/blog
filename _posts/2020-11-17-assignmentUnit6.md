@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "ACT-R Assignment Unit5"
-date:   2020-11-16 22:36:14 +0800
+title:  "ACT-R Assignment Unit6"
+date:   2020-11-17 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
