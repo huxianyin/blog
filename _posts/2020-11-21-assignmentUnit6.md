@@ -334,4 +334,4 @@ if __name__ == "__main__":
 ___
 - R = 0.991
 - MD = 0.023
-- <img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="500px">
+- <img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="600px">
