@@ -5,7 +5,8 @@ date:   2020-12-02 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Tutorial ACT-R
 ---
-####  Production Rule Learning
+#### Production Rule Learning
+<img>
 
 #### The Basic Idea
 ___
@@ -84,7 +85,7 @@ ___
 
 
 
-#### 4. Learning from Instruction
+#### Learning from Instruction
 ___
 - usually,  instructions of an experiment is learned by the subject in the warming phase.
 - in ACT-R, they are the productions written in the code
@@ -116,10 +117,8 @@ ___
 ```
 
 - with production compilation on:
-	- The paraemter  is [~ :epl ]
+	- The paraemter is <span style="color:red">:epl</span>
 - with PC on, increases the speed-up over trials in the recall time.   
 	- Correlation  0.974 --> 0.992
 - To see new  productions in the trace:
 	- > (<span style="color:red" > :ptc </span> t)
-
-  
