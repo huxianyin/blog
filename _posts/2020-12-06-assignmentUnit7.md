@@ -5,11 +5,12 @@ date:   2020-12-06 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-### Task
-___
-- Generate English Past Tense
+#### 英語過去式を生成する認知モデル
 - <img src="{{site.baseurl}}/assets/figs/post-20-12-06/word.png" width="500px">
 
+#### Task
+___
+- Generate English Past Tense
 - **Hint**
 	- 最终，model学习到2种类型的production：
 		- General: 看到一个动词，在动词后面+ed
