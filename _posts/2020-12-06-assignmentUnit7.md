@@ -7,8 +7,8 @@ tags: ACTR_Assignment ACT-R
 ---
 ### Task
 ___
-  - Generate English Past Tense
-  <img src="{{site.baseurl}}/assets/figs/post-20-12-06/word.png" width="500px">
+- Generate English Past Tense
+- <img src="{{site.baseurl}}/assets/figs/post-20-12-06/word.png" width="500px">
 
 - **Hint**
 	- 最终，model学习到2种类型的production：
