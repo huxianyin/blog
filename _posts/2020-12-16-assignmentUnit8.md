@@ -224,4 +224,4 @@ ___
 	- Test Generality with a shift
 	- <img src="{{site.baseurl}}/assets/figs/post-20-12-16/result2.png" width="500px">
 	- Test Generality with different attributes name
-	- <img src="{{site.baseurl}}/assets/figs/post-20-12-16/result3.png" width="500px">
+	- <img src="{{site.baseurl}}/assets/figs/post-20-12-16/Result3.png" width="500px">
