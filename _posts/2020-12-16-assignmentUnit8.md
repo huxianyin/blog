@@ -5,8 +5,7 @@ date:   2020-12-16 22:36:14 +0800
 categories: 認知科学
 tags: ACTR_Assignment ACT-R
 ---
-
-#### Task
+#### 顔分類タスク
 ___
   - a simplification of an experiment which was performed by Robert M. Nosofsky
   - **The experiment**
