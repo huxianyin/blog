@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   $("div.card").click(function(e){
     e.preventDefault();
-
+    var a = 10 / 0;
     var isShowing = false;
 
     if ($(this).hasClass("show")) {
