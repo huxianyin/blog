@@ -1,7 +1,7 @@
 .fullCard{
   font-family:Arial;
   margin:20px;
-  width:600px;
+  width:440px;
   height:440px;
   border:1px solid #ddd;
   padding:15px;
@@ -27,5 +27,5 @@ p{
 }
 
 #container {
-    display: grid; /* グリッドレイアウト */
+    display: inline-block; /* グリッドレイアウト */
 }
