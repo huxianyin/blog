@@ -23,56 +23,344 @@
 </head>
 <body><div id="readme" class="container"><article class="markdown-body entry-content"><hr>
 <p>layout: post
-title:  &quot;&#x8A8D;&#x77E5;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;ACT-R&quot;
-date:   2020-01-03 18:53:13 +0800
+title:  &quot;ACT-R Assignment Unit6&quot;
+date:   2020-11-21 22:36:14 +0800
 categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
-<h2 id="tags-act-r">tags: ACT-R</h2>
-<!-- <img src="{{site.baseurl}}/assets/figs/post-01-03/pic1.jpeg" width="500px"> -->
-<img src="{{site.baseurl}}/assets/figs/post-20-01-03/banner.png" width="500px">
-#### ACT-R
-  - Anderson, J. R., Bothell, D., Byrne, M. D., Douglass, S., Lebiere, C., &amp; Qin, Y . (2004). An integrated theory of the mind. Psychological Review 111, (4). 1036-1060.
-  - http://act-r.psy.cmu.edu/
+<h2 id="tags-actr_assignment-act-r">tags: ACTR_Assignment ACT-R</h2>
+<img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="600px">
+#### Task : Coin Guess
+___
+- develop a model for a &quot;probability matching&quot; experiment
+- Experiment Flow&#xFF1A;
+    - presented with a screen saying &quot;Choose&quot;
+    - either presses the &#x2018;h&#x2019; or &apos;t&apos;
+    - h = heads
+    - t  = tails
+    - key pressed --&gt; screen cleared
+    - feedback of correct answer (h / t ) holds for 1s
+- Condition :
+    - 48 trails
+    - 90% of the 48 trials, the correct answer is head
+- fit data: (each block contain 12 trail)  proportion of &quot;head&quot; choice
+    - 1st block  :  0.664
+    - 2nd block  :  0.778
+    - 3rd block  :  0.804
+    - 4th block  :  0.818
+- should run multiple times of the experiment and average results
+- reference (goal)
+    - R = 0.994
+    - MD = 0.016
+- parameter tuning
+    - noise in the utilities (set by the :egs parameter)
+    - rewards associated with successful and unsuccessful responses.
 
-<h4 id="tutorial">Tutorial</h4>
+
+<h4 id="example-experiment-functions">Example experiment functions</h4>
+<hr>
 <ul>
-<li><a href="https://huxianyin.github.io/blog/2020/03/03/tutorialUnit1">ACT-R 7.0 Tutorial Unit1</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/09/21/tutorialUnit2">ACT-R 7.0 Tutorial Unit2 Perception and Motor Actions</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/02/tutorialUnit3">ACT-R 7.0 Tutorial Unit3 Attention</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/09/tutorialUnit4">ACT-R 7.0 Tutorial Unit4 Activation of Chunks and Base-Level Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/14/tutorialUnit5">ACT-R 7.0 Tutorial Unit5 Activation and Context</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/20/tutorialUnit6">ACT-R 7.0 Tutorial Unit6 Utility Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/02/tutorialUnit7">ACT-R 7.0 Tutorial Unit7 Production Rule Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/15/tutorialUnit8">ACT-R 7.0 Tutorial Unit8 Advanced Production Techniques</a></li>
-</ul>
-<h4 id="assignment-solution">Assignment &amp; Solution</h4>
-<ul>
-<li><a href="https://huxianyin.github.io/blog/2020/09/22/assignmentUnit2">ACT-R Assignment2 &#x9055;&#x3044;&#x63A2;&#x3057;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2021/01/09/assignmentUnit3">ACT-R Assignment3 X&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/12/assignmentUnit4">ACT-R Assignment4 &#x6570;&#x5F0F;&#x5224;&#x65AD;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/16/assignmentUnit5">ACT-R Assignment5 &#x30D6;&#x30E9;&#x30C3;&#x30AF;&#x30B8;&#x30E3;&#x30C3;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/21/assignmentUnit6">ACT-R Assignment6 &#x30B3;&#x30A4;&#x30F3;&#x6295;&#x3052;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/06/assignmentUnit7">ACT-R Assignment7 &#x82F1;&#x8A9E;&#x904E;&#x53BB;&#x5F0F;&#x306E;&#x52C9;&#x5F37;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/16/assignmentUnit8">ACT-R Assignment8 &#x9854;&#x5206;&#x985E;&#x30BF;&#x30B9;&#x30AF;</a></li>
-</ul>
-<h4 id="community">Community</h4>
-<ul>
-<li><h5 id="summer">Summer</h5>
-<ul>
-<li>The ACT-R community meets annually at the <a href="http://act-r.psy.cmu.edu/workshops/">ACT-R Workshop</a>.</li>
+<li>choice-model.lisp</li>
+<li>choice.lisp</li>
+<li>useful commands:<ul>
+<li>reset</li>
+<li>run</li>
+<li>run_full_time(float amout_of_time)</li>
+<li>install_device()</li>
+<li>correlation()</li>
+<li>mean_deviation()</li>
 </ul>
 </li>
-<li><h5 id="winter">Winter</h5>
+</ul>
+<h4 id="solution">Solution</h4>
+<hr>
 <ul>
-<li>Winter Workshop on ACT-R models of Human-System Interaction.</li>
-<li>The community is also seen at the Annual <a href="https://cognitivesciencesociety.org/">Conference of Cognitive Science Society(CSS)</a> and at the <a href="http://iccm-conference.org/">International Conference on Cognitive Modeling(ICCM)</a>.</li>
+<li><h5 id="task">Task</h5>
+</li>
+</ul>
+<pre><code class="language-python">import actr
+import numpy as np
+# actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model.lisp&quot;)
+actr.load_act_r_model(&quot;ACT-R:tutorial;unit6;choice-model-solution.lisp&quot;)
+choice_data = [0.664, 0.778, 0.804, 0.818]
+response = False
+virtual_mode = True
+
+def dominant_ratio(response):
+    if response.count(&quot;h&quot;) &gt; response.count(&quot;t&quot;):
+        dominant = &quot;h&quot;
+    else:
+        dominant = &quot;t&quot;
+    return np.mean(np.array(response)==dominant)
+
+
+def respond_to_key_press (model,key):
+    global response
+
+    response = key
+
+def trial(window,probability,person=True):
+    global response
+
+    actr.add_command(&quot;choice-response&quot;,respond_to_key_press,&quot;Choice task key response&quot;)
+    actr.monitor_command(&quot;output-key&quot;,&quot;choice-response&quot;)
+    actr.add_text_to_exp_window (window, &apos;choose&apos;, x=50, y=100)
+
+    response = &apos;&apos;
+
+    if person:
+        while response == &apos;&apos;:
+            actr.process_events()
+    else:
+        actr.run(1,not virtual_mode)
+
+    actr.clear_exp_window(window)
+
+    if actr.random(1.0) &lt; probability:
+        answer = &apos;heads&apos;
+    else:
+        answer = &apos;tails&apos;
+
+    actr.add_text_to_exp_window (window, answer, x=50, y=100)
+
+    start = actr.get_time(False)
+
+    if person:
+        while (actr.get_time(False) - start) &lt; 1000:
+            actr.process_events()
+    else:
+        actr.run(1,not virtual_mode)
+    actr.clear_exp_window(window)
+    actr.remove_command_monitor(&quot;output-key&quot;,&quot;choice-response&quot;)
+    actr.remove_command(&quot;choice-response&quot;)
+
+    return response
+
+def block(block_id,probability,person=True):
+    block_res = []
+    window = actr.open_exp_window(&quot;Choice Experiment&quot;,visible=False)
+    actr.install_device(window)
+    for i in range(12):
+        response = trial(window,probability,person)
+        block_res.append(response)
+    res = dominant_ratio(block_res)
+
+    #print(&quot;Block-&quot;,block_id+1,&quot;\tAccuracy=&quot;,hratio)
+    return res
+
+
+def Experiment(num_block=4,probability=0.9,person=False):
+    result_list = []
+    for i in range(num_block):
+        result_list.append(block(i,probability,person))
+    return result_list
+
+
+def compare(n=100):
+    result_list = []
+    for i in range(n):
+        result_list.append(Experiment(probability=0.9))
+        result_list.append(Experiment(probability=0.1))
+
+    result_list = np.array(result_list)
+    avg_result = list(np.mean(result_list,axis=0))
+    r=actr.correlation(avg_result,choice_data)
+    md=actr.mean_deviation(avg_result,choice_data)
+    print()
+    print(&quot;Model Result:&quot;,avg_result)
+    print(&quot;Human Result:&quot;,choice_data)
+    print()
+    print(&quot;correlation=&quot;,r)
+    print(&quot;mean deviation=&quot;,md)
+
+if __name__ == &quot;__main__&quot;:
+    compare(100)</code></pre>
+<ul>
+<li><h5 id="model">Model</h5>
+</li>
+</ul>
+<pre><code class="language-lisp">(clear-all)
+
+(define-model choice-solution
+
+;(sgp :seed (200 4))
+
+(sgp :v nil :ul t  :egs 3 :esc t)
+(chunk-type goal state)
+(chunk-type response val)
+
+
+(add-dm
+ (start isa chunk)
+ (attending-choose isa chunk) (respond isa chunk)
+ (attending-feedback isa chunk) (read-feedback isa chunk) (done isa chunk)
+ (goal isa goal state start)
+)
+
+(install-device &apos;(&quot;motor&quot; &quot;keyboard&quot;))
+
+(P start
+    =goal&gt;
+       isa     goal
+       state   start
+==&gt;
+    =goal&gt;
+        isa goal
+        state attending-choose
+    +visual-location&gt;
+)
+
+(P attend-letter
+   =goal&gt;
+      ISA         goal
+      state       attending-choose
+   =visual-location&gt;
+   ?visual&gt;
+      state       free
+==&gt;
+   +visual&gt;
+      cmd         move-attention
+      screen-pos  =visual-location
+   =goal&gt;
+      ISA         goal
+      state       respond
+)
+
+
+(p respond-t
+    =goal&gt;
+      isa      goal
+      state    respond
+    =visual&gt;
+      isa      visual-object
+      value    &quot;choose&quot;
+      ;(!print! =val)
+    ?manual&gt;
+      state    free   
+    ?imaginal&gt;
+      state    free
+   ==&gt;
+    +manual&gt;
+        cmd press-key
+        key &quot;t&quot;
+    +imaginal&gt;
+        isa     response
+        val     &quot;tails&quot;
+    =goal&gt;
+      isa      goal
+      state    attending-feedback
+    +visual-location&gt;
+)
+
+
+
+(p respond-h
+    =goal&gt;
+      isa      goal
+      state    respond
+    =visual&gt;
+      isa      visual-object
+      value    &quot;choose&quot;
+      ;(!print! =val)
+    ?manual&gt;
+      state    free   
+    ?imaginal&gt;
+      state    free
+   ==&gt;
+    +manual&gt;
+        cmd press-key
+        key &quot;h&quot;
+    +imaginal&gt;
+        isa     response
+        val     &quot;heads&quot;
+    =goal&gt;
+      isa      goal
+      state    attending-feedback
+    +visual-location&gt;
+)
+
+
+(p attending-feedback
+    =visual-location&gt;
+    =goal&gt;
+      isa      goal
+      state    attending-feedback
+ ==&gt;
+    =goal&gt;
+      isa      goal
+      state    read-feedback
+    +visual-location&gt;
+      :attended nil
+)
+
+
+
+(p read-feedback
+   =goal&gt;
+       ISA goal
+       state read-feedback
+   =visual-location&gt;
+   ?visual&gt;
+      state       free
+==&gt;
+   +visual&gt;
+      cmd         move-attention
+      screen-pos  =visual-location
+   =goal&gt;
+       ISA        goal
+       state      done
+
+)
+
+(p done-correct
+    =goal&gt;
+      isa      goal
+      state    done
+    =visual&gt;
+      isa      visual-object
+      value    =val
+    =imaginal&gt;
+      val  =val
+   ==&gt;
+    =goal&gt;
+      state    start
+)
+
+(p done-wrong
+    =goal&gt;
+      isa      goal
+      state    done
+    =visual&gt;
+      isa      visual-object
+      value    =val
+    =imaginal&gt;
+      -  val  =val
+   ==&gt;
+    =goal&gt;
+      state    start
+)
+
+(goal-focus goal)
+
+;(spp respond-h :u 10)
+;(spp respond-t :u 10)
+
+(spp attend-letter :reward 0)
+(spp done-correct :reward 10)
+
+)</code></pre>
+<ul>
+<li><h5 id="parameter-tuning-">Parameter tuning:</h5>
+<ul>
+<li><span style="color:red">:ens</span> = 3</li>
+<li>reward of success = 10</li>
 </ul>
 </li>
-<li><h5 id="labs">Labs</h5>
-<ul>
-<li><a href="http://miwalab.cog.human.nagoya-u.ac.jp/">&#x540D;&#x53E4;&#x5C4B;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662; &#x60C5;&#x5831;&#x5B66;&#x7814;&#x7A76;&#x79D1; &#x5FC3;&#x7406;&#x30FB;&#x8A8D;&#x77E5;&#x79D1;&#x5B66;&#x5C02;&#x653B; &#x4E09;&#x8F2A;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="https://acml-shizuppi.net/en/">&#x9759;&#x5CA1;&#x5927;&#x5B66;&#x3000;&#x5FDC;&#x7528;&#x8A8D;&#x77E5;&#x5C02;&#x653B;&#x3000;&#x68EE;&#x7530;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="http://acs.ist.psu.edu/wp/">The Pen State Applied Cognitive Science Lab</a></li>
 </ul>
+<h4 id="results">Results</h4>
+<hr>
+<ul>
+<li>R = 0.991</li>
+<li>MD = 0.023</li>
+<li><img src="{{site.baseurl}}/assets/figs/post-20-11-21/result.png" width="600px">
 </li>
 </ul>
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">

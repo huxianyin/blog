@@ -23,55 +23,310 @@
 </head>
 <body><div id="readme" class="container"><article class="markdown-body entry-content"><hr>
 <p>layout: post
-title:  &quot;&#x8A8D;&#x77E5;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;ACT-R&quot;
-date:   2020-01-03 18:53:13 +0800
+title:  &quot;ACT-R Assignment Unit8&quot;
+date:   2020-12-16 22:36:14 +0800
 categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
-<h2 id="tags-act-r">tags: ACT-R</h2>
-<!-- <img src="{{site.baseurl}}/assets/figs/post-01-03/pic1.jpeg" width="500px"> -->
-<img src="{{site.baseurl}}/assets/figs/post-20-01-03/banner.png" width="500px">
-#### ACT-R
-  - Anderson, J. R., Bothell, D., Byrne, M. D., Douglass, S., Lebiere, C., &amp; Qin, Y . (2004). An integrated theory of the mind. Psychological Review 111, (4). 1036-1060.
-  - http://act-r.psy.cmu.edu/
+<h2 id="tags-actr_assignment-act-r">tags: ACTR_Assignment ACT-R</h2>
+<h4 id="-">&#x9854;&#x5206;&#x985E;&#x30BF;&#x30B9;&#x30AF;</h4>
+<hr>
+<ul>
+<li>a simplification of an experiment which was performed by Robert M. Nosofsky</li>
+<li><strong>The experiment</strong><ul>
+<li>trained on learning 10 faces (5 of each categories)</li>
+<li>varied along:<ul>
+<li>eye height     (EH)</li>
+<li>eye seperation   (ES)</li>
+<li>nose length      (NL)</li>
+<li>mouth height     (MH)</li>
+</ul>
+</li>
+<li>testing phase<ul>
+<li>new faces</li>
+<li>old faces</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>The model:</strong><ul>
+<li>Not involve any learning mechanism</li>
+<li><blockquote>
+<p>training information pre-encoded in declarative memory,  model reset on every trial</p>
+</blockquote>
+</li>
+<li>&#x6D41;&#x308C;&#xFF1A;<ul>
+<li>presented with the attributes one at a time<ul>
+<li>name-value</li>
+</ul>
+</li>
+<li>collect those attributes into a single chunk (encoded in the imaginal buffer)</li>
+<li>using the chunk to retrieve a best matching in the DM</li>
+<li>based on the chunk, make a category choice for the current stimuli</li>
+</ul>
+</li>
+<li>Hint<ul>
+<li>first thing to do is to creating stimulus representation from the individual attributes</li>
+<li>no more than 5 productions</li>
+<li>use procedual partial matching</li>
+<li>use dynamic pattern matching</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>The Stimulus Attributes</strong></p>
+<ul>
+<li>Goal buffer in the initial state<ul>
+<li>CHUNK1-0<ul>
+<li>NAME EH</li>
+<li>VALUE 0.7</li>
+<li>STATE ADD-ATTRIBUTE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>We have to convert the numeric number 0.7 into a symbolic description stored in a slot of the <strong>imaginal</strong> buffer<ul>
+<li>small</li>
+<li>medium</li>
+<li>large</li>
+</ul>
+</li>
+<li>use procedual partial matching and similarity hook to convert numeric attributes t label attributes</li>
+</ul>
+</li>
+<li><p><strong>Model Response</strong></p>
+<ul>
+<li>Goal state set to CATEGORIZE<ul>
+<li>CHUNK5-0<ul>
+<li>STATE CATEGORIZE</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Retrieving an example in the DM that is similar to the current stimulus in the imaginal buffer<ul>
+<li>but the slot names were unkown</li>
+<li>using an indirect request with the chunk from the imaginal buffer :</li>
+<li>?  +retrieval&gt; =imaginal</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Running the experiment</strong></p>
+<ul>
+<li>Test functionality of adding atrributes<ul>
+<li><blockquote>
+<p>(categorize-attribute size -.9)</p>
+</blockquote>
+</li>
+<li>result in a chunk created in the imaginal buffer<ul>
+<li>CHUNK1-0<ul>
+<li>CATEGORY UNKNOWN</li>
+<li>SIZE             SMALL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the attribute name can be any string</li>
+</ul>
+</li>
+<li>Test functionality of retrieving using dynamic pattern matching<ul>
+<li><blockquote>
+<p>(categorize-stimulus 1 -1 -1 -1)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Fitting the data</strong></p>
+<ul>
+<li><blockquote>
+<p>(categorize-experiment 10)</p>
+</blockquote>
+</li>
+<li>reference result if the model is built correctly<ul>
+<li>CORRELATION:  0.948</li>
+<li>MEAN DEVIATION:  0.174</li>
+</ul>
+</li>
+<li>paramters than can be tuned<ul>
+<li>(sgp :mp 1     # declarative partical matching</li>
+<li>:ppm 1           #  procedual  partical  matching</li>
+<li>:egs .25         #  noise for utility</li>
+<li>:ans .25)        #  noise for activation</li>
+</ul>
+</li>
+<li>After paramter tuning:  (n = 500)<ul>
+<li>CORRELATION:  0.948</li>
+<li>MEAN DEVIATION:  0.142</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Generality</strong></p>
+<ul>
+<li>To test the generability:<ul>
+<li>change similarity scores<ul>
+<li><blockquote>
+<p>(categorize-experiment 100 4.5)</p>
+</blockquote>
+</li>
+<li>offset  /  shift  = 4.5</li>
+</ul>
+</li>
+<li>also change attribute names<ul>
+<li><blockquote>
+<p>(categorize-experiment 100 -3 a b c d)</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the model should be unaffected by that change and produce the same fit to the data regardless of the number provided for the shift and the name provided for the attributes</li>
+<li><blockquote>
+<p>Changing the attribute names and the offset should not affect the model&#x2019;s ability to do the task if it has been written to perform the task generally.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="model">Model</h4>
+<hr>
+<pre><code class="language-lisp">(clear-all)
 
-<h4 id="tutorial">Tutorial</h4>
+ (define-model categorize
+   (sgp :v nil :act t)
+   (sgp :esc t :lf .01 :blc 10 :rt -100 :do-not-harvest imaginal)
+   (sgp :sim-hook &quot;size-similarities&quot; :cache-sim-hook-results t)
+   (sgp :mp 1 :ppm 1 :egs .25 :ans .25)
+
+   (chunk-type goal state name value)
+   (chunk-type example category)
+
+   (add-dm (small isa chunk)
+           (medium isa chunk)
+           (large isa chunk)
+           (unknown isa chunk))
+
+   (define-chunks (categorize) (add-attribute))
+
+   (call-act-r-command &quot;create-example-memories&quot;)
+
+   (set-similarities (small medium -.4)
+                     (medium large -.4)
+                     (small large -.8))
+
+
+   (set-buffer-chunk &apos;imaginal (first (define-chunks (category unknown))))
+
+   ;; Declare the goal buffer chunk-type usage which is going to be set from
+   ;; outside of the model.
+
+   (declare-buffer-usage goal goal :all)
+
+   (p add-information-small
+     =goal&gt;
+       isa goal
+       state add-attribute
+       value small
+       name  =n
+     =imaginal&gt;
+   ==&gt;
+     =imaginal&gt;
+       category unknown
+       =n   small
+     =goal&gt;
+       state add-attribute
+       value nil
+       name  nil
+     )
+
+   (p add-information-medium
+     =goal&gt;
+       isa goal
+       state add-attribute
+       value medium
+       name  =n
+     =imaginal&gt;
+   ==&gt;
+     =imaginal&gt;
+       category unknown
+       =n   medium
+     =goal&gt;
+       state add-attribute
+       value nil
+       name  nil
+     )
+
+   (p add-information-large
+     =goal&gt;
+       isa goal
+       state add-attribute
+       value large
+       name  =n
+     =imaginal&gt;
+   ==&gt;
+     =imaginal&gt;
+       category unknown
+       =n   large
+     =goal&gt;
+       state add-attribute
+       value nil
+       name  nil
+     )
+
+   (p find-example
+     =goal&gt;
+       isa goal
+       state categorize
+     =imaginal&gt;
+     ?retrieval&gt;
+       state  free
+       buffer empty
+   ==&gt;
+     +retrieval&gt; =imaginal
+   )
+
+   (p done
+     =goal&gt;
+       isa goal
+       state categorize
+     =imaginal&gt;
+     =retrieval&gt;
+       category =val
+   ==&gt;
+     =imaginal&gt;
+       category =val
+     =goal&gt;
+       isa goal
+       state nil
+   )
+
+
+  )</code></pre>
 <ul>
-<li><a href="https://huxianyin.github.io/blog/2020/03/03/tutorialUnit1">ACT-R 7.0 Tutorial Unit1</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/09/21/tutorialUnit2">ACT-R 7.0 Tutorial Unit2 Perception and Motor Actions</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/02/tutorialUnit3">ACT-R 7.0 Tutorial Unit3 Attention</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/09/tutorialUnit4">ACT-R 7.0 Tutorial Unit4 Activation of Chunks and Base-Level Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/14/tutorialUnit5">ACT-R 7.0 Tutorial Unit5 Activation and Context</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/20/tutorialUnit6">ACT-R 7.0 Tutorial Unit6 Utility Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/02/tutorialUnit7">ACT-R 7.0 Tutorial Unit7 Production Rule Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/15/tutorialUnit8">ACT-R 7.0 Tutorial Unit8 Advanced Production Techniques</a></li>
-</ul>
-<h4 id="assignment-solution">Assignment &amp; Solution</h4>
-<ul>
-<li><a href="https://huxianyin.github.io/blog/2020/09/22/assignmentUnit2">ACT-R Assignment2 &#x9055;&#x3044;&#x63A2;&#x3057;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2021/01/09/assignmentUnit3">ACT-R Assignment3 X&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/12/assignmentUnit4">ACT-R Assignment4 &#x6570;&#x5F0F;&#x5224;&#x65AD;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/16/assignmentUnit5">ACT-R Assignment5 &#x30D6;&#x30E9;&#x30C3;&#x30AF;&#x30B8;&#x30E3;&#x30C3;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/21/assignmentUnit6">ACT-R Assignment6 &#x30B3;&#x30A4;&#x30F3;&#x6295;&#x3052;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/06/assignmentUnit7">ACT-R Assignment7 &#x82F1;&#x8A9E;&#x904E;&#x53BB;&#x5F0F;&#x306E;&#x52C9;&#x5F37;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/16/assignmentUnit8">ACT-R Assignment8 &#x9854;&#x5206;&#x985E;&#x30BF;&#x30B9;&#x30AF;</a></li>
-</ul>
-<h4 id="community">Community</h4>
-<ul>
-<li><h5 id="summer">Summer</h5>
-<ul>
-<li>The ACT-R community meets annually at the <a href="http://act-r.psy.cmu.edu/workshops/">ACT-R Workshop</a>.</li>
+<li>key notes<ul>
+<li>attending imaginal slots:<pre><code class="language-lisp">(p example
+       ...
+       =imaginal&gt;              ; do not query
+==&gt;
+ =imaginal&gt;              ; do not use +!!!
+   category unknown
+   =n   medium</code></pre>
+</li>
 </ul>
 </li>
-<li><h5 id="winter">Winter</h5>
-<ul>
-<li>Winter Workshop on ACT-R models of Human-System Interaction.</li>
-<li>The community is also seen at the Annual <a href="https://cognitivesciencesociety.org/">Conference of Cognitive Science Society(CSS)</a> and at the <a href="http://iccm-conference.org/">International Conference on Cognitive Modeling(ICCM)</a>.</li>
 </ul>
-</li>
-<li><h5 id="labs">Labs</h5>
+<h4 id="results">Results</h4>
+<hr>
 <ul>
-<li><a href="http://miwalab.cog.human.nagoya-u.ac.jp/">&#x540D;&#x53E4;&#x5C4B;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662; &#x60C5;&#x5831;&#x5B66;&#x7814;&#x7A76;&#x79D1; &#x5FC3;&#x7406;&#x30FB;&#x8A8D;&#x77E5;&#x79D1;&#x5B66;&#x5C02;&#x653B; &#x4E09;&#x8F2A;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="https://acml-shizuppi.net/en/">&#x9759;&#x5CA1;&#x5927;&#x5B66;&#x3000;&#x5FDC;&#x7528;&#x8A8D;&#x77E5;&#x5C02;&#x653B;&#x3000;&#x68EE;&#x7530;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="http://acs.ist.psu.edu/wp/">The Pen State Applied Cognitive Science Lab</a></li>
+<li>with default parameter<ul>
+<li>(sgp      :mp 1      :ppm 1         :egs .25         :ans .25)     </li>
+<li><img src="{{site.baseurl}}/assets/figs/post-20-12-16/result1.png" width="500px"></li>
+<li>Test Generality with a shift</li>
+<li><img src="{{site.baseurl}}/assets/figs/post-20-12-16/result2.png" width="500px"></li>
+<li>Test Generality with different attributes name</li>
+<li><img src="{{site.baseurl}}/assets/figs/post-20-12-16/Result3.png" width="500px">
+</li>
 </ul>
 </li>
 </ul>

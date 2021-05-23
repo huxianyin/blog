@@ -23,55 +23,190 @@
 </head>
 <body><div id="readme" class="container"><article class="markdown-body entry-content"><hr>
 <p>layout: post
-title:  &quot;&#x8A8D;&#x77E5;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;ACT-R&quot;
-date:   2020-01-03 18:53:13 +0800
+title:  &quot;ACT-R Tutorial Unit7&quot;
+date:   2020-12-02 22:36:14 +0800
 categories: &#x8A8D;&#x77E5;&#x79D1;&#x5B66;</p>
-<h2 id="tags-act-r">tags: ACT-R</h2>
-<!-- <img src="{{site.baseurl}}/assets/figs/post-01-03/pic1.jpeg" width="500px"> -->
-<img src="{{site.baseurl}}/assets/figs/post-20-01-03/banner.png" width="500px">
-#### ACT-R
-  - Anderson, J. R., Bothell, D., Byrne, M. D., Douglass, S., Lebiere, C., &amp; Qin, Y . (2004). An integrated theory of the mind. Psychological Review 111, (4). 1036-1060.
-  - http://act-r.psy.cmu.edu/
+<h2 id="tags-actr_tutorial-act-r">tags: ACTR_Tutorial ACT-R</h2>
+<h4 id="production-rule-learning">Production Rule Learning</h4>
+<img>
 
-<h4 id="tutorial">Tutorial</h4>
+<h4 id="the-basic-idea">The Basic Idea</h4>
+<hr>
 <ul>
-<li><a href="https://huxianyin.github.io/blog/2020/03/03/tutorialUnit1">ACT-R 7.0 Tutorial Unit1</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/09/21/tutorialUnit2">ACT-R 7.0 Tutorial Unit2 Perception and Motor Actions</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/02/tutorialUnit3">ACT-R 7.0 Tutorial Unit3 Attention</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/09/tutorialUnit4">ACT-R 7.0 Tutorial Unit4 Activation of Chunks and Base-Level Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/14/tutorialUnit5">ACT-R 7.0 Tutorial Unit5 Activation and Context</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/20/tutorialUnit6">ACT-R 7.0 Tutorial Unit6 Utility Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/02/tutorialUnit7">ACT-R 7.0 Tutorial Unit7 Production Rule Learning</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/15/tutorialUnit8">ACT-R 7.0 Tutorial Unit8 Advanced Production Techniques</a></li>
-</ul>
-<h4 id="assignment-solution">Assignment &amp; Solution</h4>
-<ul>
-<li><a href="https://huxianyin.github.io/blog/2020/09/22/assignmentUnit2">ACT-R Assignment2 &#x9055;&#x3044;&#x63A2;&#x3057;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2021/01/09/assignmentUnit3">ACT-R Assignment3 X&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/12/assignmentUnit4">ACT-R Assignment4 &#x6570;&#x5F0F;&#x5224;&#x65AD;&#x30BF;&#x30B9;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/16/assignmentUnit5">ACT-R Assignment5 &#x30D6;&#x30E9;&#x30C3;&#x30AF;&#x30B8;&#x30E3;&#x30C3;&#x30AF;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/11/21/assignmentUnit6">ACT-R Assignment6 &#x30B3;&#x30A4;&#x30F3;&#x6295;&#x3052;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/06/assignmentUnit7">ACT-R Assignment7 &#x82F1;&#x8A9E;&#x904E;&#x53BB;&#x5F0F;&#x306E;&#x52C9;&#x5F37;</a></li>
-<li><a href="https://huxianyin.github.io/blog/2020/12/16/assignmentUnit8">ACT-R Assignment8 &#x9854;&#x5206;&#x985E;&#x30BF;&#x30B9;&#x30AF;</a></li>
-</ul>
-<h4 id="community">Community</h4>
-<ul>
-<li><h5 id="summer">Summer</h5>
-<ul>
-<li>The ACT-R community meets annually at the <a href="http://act-r.psy.cmu.edu/workshops/">ACT-R Workshop</a>.</li>
+<li>production compilation<ul>
+<li>discuss how [~ new production rules] are learned</li>
+<li>2 production rules that apply in succession ---&gt;   a single rule</li>
 </ul>
 </li>
-<li><h5 id="winter">Winter</h5>
-<ul>
-<li>Winter Workshop on ACT-R models of Human-System Interaction.</li>
-<li>The community is also seen at the Annual <a href="https://cognitivesciencesociety.org/">Conference of Cognitive Science Society(CSS)</a> and at the <a href="http://iccm-conference.org/">International Conference on Cognitive Modeling(ICCM)</a>.</li>
+<li>In the pair task: (for the pair  zinc &amp; 9 )<ul>
+<li>PRODUCTION 1 :  see =val, retrival                         (abstract pattern matching )</li>
+<li>PRODUCTION 2 : retreived =ans,  press =ans       (abstract pattern matching )</li>
+<li>COMBINED PRODUCTION : see zinc, press 9       (specific)</li>
 </ul>
 </li>
-<li><h5 id="labs">Labs</h5>
+</ul>
+<h4 id="forming-a-new-production">Forming a new production</h4>
+<hr>
 <ul>
-<li><a href="http://miwalab.cog.human.nagoya-u.ac.jp/">&#x540D;&#x53E4;&#x5C4B;&#x5927;&#x5B66;&#x5927;&#x5B66;&#x9662; &#x60C5;&#x5831;&#x5B66;&#x7814;&#x7A76;&#x79D1; &#x5FC3;&#x7406;&#x30FB;&#x8A8D;&#x77E5;&#x79D1;&#x5B66;&#x5C02;&#x653B; &#x4E09;&#x8F2A;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="https://acml-shizuppi.net/en/">&#x9759;&#x5CA1;&#x5927;&#x5B66;&#x3000;&#x5FDC;&#x7528;&#x8A8D;&#x77E5;&#x5C02;&#x653B;&#x3000;&#x68EE;&#x7530;&#x7814;&#x7A76;&#x5BA4;</a></li>
-<li><a href="http://acs.ist.psu.edu/wp/">The Pen State Applied Cognitive Science Lab</a></li>
+<li>2 sets of conditions  ---&gt;  a single set of tests</li>
+<li>2 sets of actions   ---&gt; a  single set of  actions that has the same  overall effect</li>
+<li><p><strong>Motor Style Buffers</strong></p>
+<ul>
+<li><span style="color:orange">manual buffer </span> &amp;   <span style="color:orange">visual buffer </span><ul>
+<li>they never hold a chunk</li>
+<li>only receive request</li>
+<li>only tested through query</li>
+</ul>
+</li>
+<li>Condition of  compilation:<ul>
+<li>1st :  request bufferA  ,    2 nd : request bufferB  &#x2705;</li>
+<li>1st :  request bufferA  ,    2 nd : request bufferA  &#x274C;</li>
+<li>1st :  request bufferA  ,    2 nd : query bufferA   state busy&#x3000;&#x2705;</li>
+<li>1st :  request bufferA  ,    2 nd : query bufferA   state free (other than busy) &#x3000;&#x274C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Perceptual Style Buffers</strong></p>
+<ul>
+<li><span style="color:orange">visual-location, visual, aural-location, aural</span><ul>
+<li>they will hold chunks generated by their modules</li>
+</ul>
+</li>
+<li>Condition  of  compilation:<ul>
+<li>1st :  request bufferA  ,    2 nd : query bufferA   state free (other than busy) &#x274C;</li>
+<li>1st :  request bufferA  ,    2 nd : request bufferA  &#x274C;</li>
+<li>1st :  request bufferA  ,    2 nd : test contents of bufferA &#x274C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Retrieval Style Buffers</strong></p>
+<ul>
+<li><span style="color:orange">retrieval</span><ul>
+<li>more predictable and offers a chance  for economy</li>
+</ul>
+</li>
+<li>Condition  of  compilation:<ul>
+<li>1st :  request retrieval  ,    2 nd : test the results  of the retrieval  &#x2705;<ul>
+<li>specialize the composed production</li>
+</ul>
+</li>
+<li>1st :  request retrieval  ,    2 nd : query  for a retrieval failure &#x274C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>** Goal and Imaginal Style Buffers**</p>
+<ul>
+<li><span style="color:orange">goal, imaginal</span></li>
+<li>first prodcution does not make a request<ul>
+<li>before compilation  :  C1 --&gt; A1 ,  C2  --&gt; A2</li>
+<li>after compilation  :  C1 + (C2  - A1 )   ---&gt;   A2 + (A1~A2)</li>
+</ul>
+</li>
+<li>first production makes a request<ul>
+<li>The second production does not also make a request<ul>
+<li>2nd buffer test can be deleted</li>
+<li>C1  --&gt;  A1 (modifycation) &amp;  A2+(N1~A2) (new  request)</li>
+</ul>
+</li>
+<li>The second production also makes a request<ul>
+<li>can not be composed &#x274C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Difference between goal and imaginal<ul>
+<li>the use of query<ul>
+<li>imaginal can be busy</li>
+<li>goal never be busy</li>
+</ul>
+</li>
+<li>For goal:<ul>
+<li>never query goal buffer, otherwise the compilation will be blocked</li>
+</ul>
+</li>
+<li>For imaginal:<ul>
+<li>if the 1st has a request then the 2nd must<ul>
+<li>test the buffer for state busy</li>
+<li>not also make a request</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color:red">Detailed Info : compilation.xls</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="utility-of-newly-created-productions">Utility of newly created productions</h4>
+<hr>
+<ul>
+<li>New  = Old1 + Old2</li>
+<li>whenever  New could apply, Old1 can also apply (Old1 is more &#x6C4E;&#x7528;&#x7684;)</li>
+<li>Utility of New  :   <span style="color:red"> :nu</span>  default = 0</li>
+<li>Each time  New is  created, its  utility  is updated with a rewad<ul>
+<li>reward = Utility of Old1</li>
+</ul>
+</li>
+<li>New lose and Old1 fire ----&gt; New and Old1 is very close ---&gt; occasionally New is  selected --&gt; New surpass  Old1 (because it is faster and received more reward)</li>
+<li>The  speed of learning is  controlled by the  parameter <span style="color:red"> :alpha </span><ul>
+<li><blockquote>
+<p>If it is set to 1, productions will typically get very good values immediately and likely be tried on the first opportunity.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="learning-from-instruction">Learning from Instruction</h4>
+<hr>
+<ul>
+<li>usually,  instructions of an experiment is learned by the subject in the warming phase.</li>
+<li>in ACT-R, they are the productions written in the code</li>
+<li>operator :    pre, action, arg1, arg2 , post</li>
+<li>Six  Instructions of the <strong>Pair Experiment</strong> ( Tutorial/Unit7/paired-learning.lisp)<ol>
+<li>At the start read the word and create an encoding of it as the stimulus</li>
+<li>After reading the stimulus try to retrieve an associate to the stimulus</li>
+<li>Test whether an item has been recalled and if it has not then just wait</li>
+<li>If an item has been recalled type it and then wait</li>
+<li>Store the response you read with the stimulus</li>
+<li>This trial is complete so start the next one<ul>
+<li>The model has only 3 production : retrieve-operator ,  read-arg1 and encode-arg1</li>
+<li>neither of them were specific productions of the pair task</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-lisp">  (p retrieve-operator
+       =goal&gt;
+           isa task
+           state =state
+           step ready
+   ==&gt;
+       +retrieval&gt;
+           isa operator
+           pre =state
+       =goal&gt;
+           step retrieving-operator    ;
+   )
+</code></pre>
+<ul>
+<li>with production compilation on:<ul>
+<li>The paraemter is <span style="color:red">:epl</span></li>
+</ul>
+</li>
+<li>with PC on, increases the speed-up over trials in the recall time.   <ul>
+<li>Correlation  0.974 --&gt; 0.992</li>
+</ul>
+</li>
+<li>To see new  productions in the trace:<ul>
+<li><blockquote>
+<p>(<span style="color:red"> :ptc </span> t)</p>
+</blockquote>
+</li>
 </ul>
 </li>
 </ul>
