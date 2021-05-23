@@ -1,8 +1,8 @@
 .fullCard{
   font-family:Arial;
   margin:20px;
-  width:220px;
-  height:300px;
+  width:300px;
+  height:220px;
   border:1px solid #ddd;
   padding:15px;
   border-radius:5px;
@@ -24,4 +24,8 @@ p{
   display:block;
   padding-top:15px;
   opacity:0.8;
+}
+
+#container {
+    display: grid; /* グリッドレイアウト */
 }
