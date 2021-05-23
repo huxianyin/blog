@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: software
 title: "Software"
 css: ["software.css"]
 js: ["software.js"]
