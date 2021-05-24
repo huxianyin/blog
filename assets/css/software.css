@@ -13,6 +13,10 @@
 
 @darkGrey: #4f585e;
 
+h2 {
+  font-size: 3rem;
+}
+
 body {
   background: @lightBG;
   color: @darkGrey;
